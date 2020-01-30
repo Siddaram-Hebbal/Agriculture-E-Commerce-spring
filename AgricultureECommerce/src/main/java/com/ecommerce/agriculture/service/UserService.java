@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.agriculture.entity.User;
-import com.spring.bioMedical.repository.UserRepository;
+import com.ecommerce.agriculture.repository.UserRepository;
 
 /**
  * 

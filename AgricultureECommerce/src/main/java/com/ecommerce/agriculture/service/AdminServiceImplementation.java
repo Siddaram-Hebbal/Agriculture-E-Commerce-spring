@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.agriculture.entity.Admin;
-import com.spring.bioMedical.repository.AdminRepository;
+import com.ecommerce.agriculture.repository.AdminRepository;
 
 /**
  * 

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.entity.Appointment;
-import com.spring.bioMedical.repository.AppointmentRepository;
+import com.ecommerce.agriculture.repository.AppointmentRepository;
 
 /**
  * 

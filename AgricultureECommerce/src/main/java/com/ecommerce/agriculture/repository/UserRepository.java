@@ -1,4 +1,4 @@
-package com.spring.bioMedical.repository;
+package com.ecommerce.agriculture.repository;
 
 import java.util.List;
 
