@@ -222,6 +222,16 @@ public class AdminController {
 		return "admin/updateUser";
 	}
 	
+	@GetMapping("/delete-admin")
+	public String delete(@RequestParam("id") int theId,Model theModel) {
+		
+		System.out.println(theId);
+		
+		adminServiceImplementation.findById(theId);
+	
+		return "redirect:/admin/add-admin";
+	}
+	
 
 
 }
