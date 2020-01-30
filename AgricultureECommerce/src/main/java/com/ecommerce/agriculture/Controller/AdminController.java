@@ -252,21 +252,20 @@ public class AdminController {
 		}
 		
 		Admin admin1 = adminServiceImplementation.findByEmail(username);
-				 
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-		    Date now = new Date();  
-		    
-		         String log=now.toString();
-		    
-		         admin1.setLastseen(log);
-		         
-		         adminServiceImplementation.save(admin1);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		Date now = new Date();  
+		String log=now.toString();
+		admin1.setLastseen(log);
+		adminServiceImplementation.save(admin1);
 		
 		
+		
+		
+	
 		
 		// create model attribute to bind form data
 		Admin admin = new Admin();
-		
+		admin.setEmail("a");
 		theModel.addAttribute("doctor", admin);
 		
 		return "admin/addAdmin";
