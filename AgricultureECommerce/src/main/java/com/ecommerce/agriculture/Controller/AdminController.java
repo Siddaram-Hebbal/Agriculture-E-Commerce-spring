@@ -210,45 +210,5 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping("/appointments")
-	public String appointments(Model model){
-		
-		
-		// get last seen
-		String username="";
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-		   username = ((UserDetails)principal).getUsername();
-		  String Pass = ((UserDetails)principal).getPassword();
-		  System.out.println("One + "+username+"   "+Pass);
-		  
-		  
-		} else {
-		 username = principal.toString();
-		  System.out.println("Two + "+username);
-		}
-		
-		Admin admin = adminServiceImplementation.findByEmail(username);
-				 
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-		    Date now = new Date();  
-		    
-		         String log=now.toString();
-		    
-		         admin.setLastseen(log);
-		         
-		         adminServiceImplementation.save(admin);
-		
-		
-		         
-		List<Appointment> list=appointmentServiceImplementation.findAll();
-		
-		
-		
-		// add to the spring model
-		model.addAttribute("app", list);
-		
-		
-		return "admin/appointment";
-	}
+
 }
