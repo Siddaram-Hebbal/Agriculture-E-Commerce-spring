@@ -1,4 +1,4 @@
-package com.spring.bioMedical.service;
+package com.ecommerce.agriculture.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

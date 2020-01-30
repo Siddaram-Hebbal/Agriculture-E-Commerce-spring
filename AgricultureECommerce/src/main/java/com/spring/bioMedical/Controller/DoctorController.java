@@ -11,11 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ecommerce.agriculture.service.AdminServiceImplementation;
+import com.ecommerce.agriculture.service.AppointmentServiceImplementation;
+import com.ecommerce.agriculture.service.UserService;
 import com.spring.bioMedical.entity.Admin;
 import com.spring.bioMedical.entity.Appointment;
-import com.spring.bioMedical.service.AdminServiceImplementation;
-import com.spring.bioMedical.service.AppointmentServiceImplementation;
-import com.spring.bioMedical.service.UserService;
 
 /**
  * 
