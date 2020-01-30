@@ -52,5 +52,10 @@ public class AdminServiceImplementation implements AdminService {
 		return adminRepository.findByRole(user);
 	}
 
+	@Override
+	public void deleteById(int theId) {
+		
+	}
+
 	
 }
