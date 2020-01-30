@@ -21,4 +21,6 @@ public interface AdminService {
 
 	public void save(Admin admin);
 	
+
+	public void deleteById(int theId);
 }
