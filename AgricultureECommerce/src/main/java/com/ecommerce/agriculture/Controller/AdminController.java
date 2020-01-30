@@ -265,7 +265,7 @@ public class AdminController {
 		Admin admin=new Admin();
 		// create model attribute to bind form data
 	
-		theModel.addAttribute("doctor", admin);
+		theModel.addAttribute("admin", admin);
 		
 		return "admin/addAdmin";
 	}
