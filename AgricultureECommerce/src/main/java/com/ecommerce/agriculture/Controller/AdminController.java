@@ -262,10 +262,9 @@ public class AdminController {
 		
 		
 	
-		
+		Admin admin=new Admin();
 		// create model attribute to bind form data
-		Admin admin = new Admin();
-		admin.setEmail("a");
+	
 		theModel.addAttribute("doctor", admin);
 		
 		return "admin/addAdmin";
@@ -277,6 +276,16 @@ public class AdminController {
 		
 		// save the employee
 	//	admin.setId(0);
+		
+		admin.setUser(admin.getEmail());
+		
+		admin.setAddress("Not Defined");
+		
+		admin.setMobile("Not Defined");
+
+		admin.setLongi("Not Defined");
+		
+		admin.setLatt("Not Defined");
 		
 		admin.setRole("ROLE_ADMIN");
 		
@@ -291,7 +300,7 @@ public class AdminController {
 		adminServiceImplementation.save(admin);
 		
 		// use a redirect to prevent duplicate submissions
-		return "redirect:/admin/userdetails";
+		return "redirect:/admin/add-admin";
 	}
 	
 	@GetMapping("/edit-my-profile")
