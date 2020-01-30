@@ -1,6 +1,7 @@
 package com.ecommerce.agriculture.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,6 +56,12 @@ public class AdminServiceImplementation implements AdminService {
 	@Override
 	public void deleteById(int theId) {
 		
+	}
+
+	@Override
+	public Admin findById(int id) {
+		
+		return adminRepository.findById(id);
 	}
 
 	
