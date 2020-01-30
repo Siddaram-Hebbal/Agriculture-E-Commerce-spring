@@ -160,6 +160,9 @@
 	
 	<input type="hidden" th:field="*{confirmationToken}" >
 	
+		<input type="hidden" th:field="*{long}" >
+	
+	<input type="hidden" th:field="*{long}" >
 	<tr>
 	<td><br><dt class="col-sm-3">First Name:</dt></td>
 	<td><br><input type="text" th:field="*{firstName}"  class="form-control" required="" placeholder="First Name"></td>
@@ -178,10 +181,29 @@
 	<td><br><input th:field="*{email}" class="form-control"  required="" placeholder="Email" readonly/><br></td>
 	</tr>
 	<tr>
+	<tr>
 	
 	<td><br><br><dt class="col-sm-3">Gender:</dt></td>
 	<td><br><input th:field="*{gender}" class="form-control"   required="" placeholder="Gender"/><br></td>
 	</tr>
+	
+	
+	
+	
+		
+	<tr>
+	
+	<td><br><br><dt class="col-sm-3">Mobile:</dt></td>
+	<td><br><input th:field="*{mobile}" class="form-control"   required="" placeholder="Gender"/><br></td>
+	</tr>
+	
+	
+	<tr>
+	
+	<td><br><br><dt class="col-sm-3">Address:</dt></td>
+	<td><br><input th:field="*{address}" class="form-control"   required="" placeholder="Gender"/><br></td>
+	</tr>
+	
 	
 	
 	<tr>
