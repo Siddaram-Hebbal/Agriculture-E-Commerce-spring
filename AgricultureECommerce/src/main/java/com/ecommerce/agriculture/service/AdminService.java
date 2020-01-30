@@ -15,7 +15,7 @@ public interface AdminService {
 
 	public List<Admin> findByRole(String user);
 
-	public Admin findById(String user);
+	public Admin findById(int id);
 	
 	public Admin findByEmail(String user);
 	
