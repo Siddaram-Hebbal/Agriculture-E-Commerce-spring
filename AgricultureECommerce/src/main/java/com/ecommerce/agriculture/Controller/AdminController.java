@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.agriculture.entity.Admin;
-import com.ecommerce.agriculture.entity.Appointment;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
 import com.ecommerce.agriculture.service.AppointmentServiceImplementation;
 import com.ecommerce.agriculture.service.UserService;
@@ -209,6 +209,19 @@ public class AdminController {
 		return "redirect:/admin/user-details";
 	}
 	
+	@GetMapping("/update-admin")
+	public String UpdateArea(@RequestParam("id") int theId,Model theModel) {
+		
+		System.out.println(theId);
+		
+		Admin admin=adminServiceImplementation.findById(theId);
+		System.out.println(admin);
+		
+		theModel.addAttribute("admin",admin);
+		
+		return "admin/updateUser";
+	}
 	
+
 
 }
