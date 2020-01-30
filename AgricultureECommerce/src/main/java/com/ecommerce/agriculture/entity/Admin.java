@@ -224,6 +224,15 @@ public class Admin {
 		this.longi = longi;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Admin [id=" + id + ", user=" + user + ", password=" + password + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", enabled=" + enabled + ", confirmationToken=" + confirmationToken
+				+ ", gender=" + gender + ", role=" + role + ", lastseen=" + lastseen + ", mobile=" + mobile
+				+ ", address=" + address + ", email=" + email + ", latt=" + latt + ", longi=" + longi + "]";
+	}
+
 	
 	
 }
