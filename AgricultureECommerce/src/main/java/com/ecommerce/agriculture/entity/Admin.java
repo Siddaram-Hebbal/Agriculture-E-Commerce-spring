@@ -27,7 +27,7 @@ public class Admin {
 	private int id;
 	
 	@Column(name = "username")
-	private String user;
+	private String email;
 	
 	@Column(name = "password")
 	@Transient
@@ -64,7 +64,7 @@ public class Admin {
 	private String address;
 	
 	@Column(name = "email")
-	private String email;
+	private String user;
 	
 	
 	@Column(name = "latt")
