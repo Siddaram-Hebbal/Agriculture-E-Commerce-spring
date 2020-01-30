@@ -1,4 +1,4 @@
-package com.spring.bioMedical;
+package com.ecommerce.agriculture;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
