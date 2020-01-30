@@ -227,7 +227,7 @@ public class AdminController {
 		
 		System.out.println(theId);
 		
-		adminServiceImplementation.findById(theId);
+		adminServiceImplementation.deleteById(theId);
 	
 		return "redirect:/admin/add-admin";
 	}
