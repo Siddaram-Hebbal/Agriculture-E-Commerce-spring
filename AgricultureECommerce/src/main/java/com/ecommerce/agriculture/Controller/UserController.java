@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ecommerce.agriculture.entity.Admin;
+import com.ecommerce.agriculture.entity.Appointment;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
 import com.ecommerce.agriculture.service.AppointmentServiceImplementation;
-import com.spring.bioMedical.entity.Admin;
-import com.spring.bioMedical.entity.Appointment;
 
 /**
  * 

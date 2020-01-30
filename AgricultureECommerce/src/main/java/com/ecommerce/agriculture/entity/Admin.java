@@ -1,4 +1,4 @@
-package com.spring.bioMedical.entity;
+package com.ecommerce.agriculture.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

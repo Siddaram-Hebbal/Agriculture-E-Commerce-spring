@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.spring.bioMedical.entity.User;
+import com.ecommerce.agriculture.entity.User;
 /**
  * 
  * @author Soumyadip Chowdhury
