@@ -28,5 +28,46 @@ public class Item {
 	private int id;
 	
 	
+	@Column(name = "itemID")
+	private String itemID;
+
+	@Column(name = "itemName")
+	private String itemName;
+
+	@Column(name = "itemPrice")
+	private String itemPrice;
+
+	@Column(name = "itemType")
+	private String itemType;
+
+	@Column(name = "itemIMG")
+	private String itemIMG;
+
+
+	@Column(name = "itemSeason")
+	private String itemSeason;
 	
+	@Column(name = "desc")
+	private String desc;
+	
+	@Column(name = "sellerID")
+	private String sellerID;
+	
+	@Column(name = "sellerName")
+	private String sellerName;
+	
+	
+	@Column(name = "sellerAddress")
+	private String sellerAddress;
+
+	
+	@Column(name = "sellerMob")
+	private String sellerMob;
+	
+	@Column(name = "views")
+	private String views;
+	
+	
+	@Column(name = "views")
+	private boolean active;
 }
