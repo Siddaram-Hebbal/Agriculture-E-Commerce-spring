@@ -22,20 +22,8 @@ import com.ecommerce.agriculture.service.AdminServiceImplementation;
 @RequestMapping("/seller")
 public class SellerController {
 
-	private AdminServiceImplementation adminServiceImplementation;
-	
-	
-	@Autowired
-	public SellerController(AdminServiceImplementation obj) {
-	
-		adminServiceImplementation=obj;
-	}
-	
-	
-	@RequestMapping("/index")
-	public String index(Model model){
-
-		// get last seen
+	public void lastseen()
+	{
 		String username="";
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		if (principal instanceof UserDetails) {
@@ -52,6 +40,24 @@ public class SellerController {
 		String log=now.toString();
 		admin1.setLastseen(log);
 		adminServiceImplementation.save(admin1);
+	
+	}
+	
+	private AdminServiceImplementation adminServiceImplementation;
+	
+	
+	@Autowired
+	public SellerController(AdminServiceImplementation obj) {
+	
+		adminServiceImplementation=obj;
+	}
+	
+	
+	@RequestMapping("/index")
+	public String index(Model model){
+
+		this.lastseen();
+		
 		
 		return "seller/addItems";
 	}
