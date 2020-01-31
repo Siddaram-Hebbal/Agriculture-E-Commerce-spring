@@ -43,7 +43,7 @@ public class SellerController {
 	}
 	
 	
-	@GetMapping("/index")
+	@GetMapping("/add-items")
 	public String index(Model model){
 
 		this.lastseen();
