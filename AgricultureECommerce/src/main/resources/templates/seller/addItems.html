@@ -147,10 +147,9 @@
 सामान जोडें</h1>
           <p class="mb-4"></p>
  	
-	<form  th:action="@{/seller/save}"
+	<form class="user" th:action="@{/seller/save}"
 						 th:object="${item}" method="POST">
-						 
-	
+			
   <!-- id	
   itemName
   	itemPrice
@@ -227,9 +226,9 @@
                
                    <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                  <button type="submit" >Add</button>
-                   </div>
-                  </div>
+                  <button type="submit" class="btn btn-primary btn-user btn-block">Save</button>
+                   </div></div>
+           
                   </form>
 
         </div>
