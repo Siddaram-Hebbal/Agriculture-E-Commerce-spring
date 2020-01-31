@@ -83,8 +83,17 @@ public class SellerController {
 		item.setId(0);
 		System.out.println(item);
 		
-		itemServiceImplementation.save(item);
+		int p=admin1.getId();
+		String p1=String.valueOf(p);
+		item.setSellerID(p1);
 		
+		item.setSellerName(admin1.getFirstName()+" "+admin1.getLastName());
+		item.setSellerAddress(admin1.getAddress());
+		item.setSellerLatt(admin1.getLatt());
+		item.setSellerLongi(admin1.getLongi());
+		item.setSellerEmail(admin1.getEmail());
+		item.setSellerMob(admin1.getMobile());
+		item.setViews(0);
 		return "redirect:/seller/item-details";
 	}
 
