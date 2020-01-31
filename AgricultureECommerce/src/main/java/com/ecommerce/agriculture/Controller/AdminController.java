@@ -42,14 +42,8 @@ public class AdminController {
 		
 		
 		this.lastseen();
-		
-		
-		         
+			         
 		List<Admin> list=adminServiceImplementation.findByRole("ROLE_ADMIN");
-		
-		
-		
-		// add to the spring model
 		model.addAttribute("user", list);
 		
 		
@@ -62,31 +56,9 @@ public class AdminController {
 	public String showForm(Model theModel) {
 		
 		
-		// get last seen
-		String username="";
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-		   username = ((UserDetails)principal).getUsername();
-		  String Pass = ((UserDetails)principal).getPassword();
-		  System.out.println("One + "+username+"   "+Pass);
-		  
-		  
-		} else {
-		 username = principal.toString();
-		  System.out.println("Two + "+username);
-		}
-		
-		Admin admin1 = adminServiceImplementation.findByEmail(username);
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-		Date now = new Date();  
-		String log=now.toString();
-		admin1.setLastseen(log);
-		adminServiceImplementation.save(admin1);
+		this.lastseen();
 		
 		
-		
-		
-	
 		Admin admin=new Admin();
 		// create model attribute to bind form data
 	
@@ -166,7 +138,7 @@ public class AdminController {
 	@PostMapping("/update")
 	public String update(@ModelAttribute("admin") Admin admin) {
 		
-		
+		this.lastseen();
 		System.out.println(admin);
 		
 		adminServiceImplementation.save(admin);
@@ -176,7 +148,7 @@ public class AdminController {
 	
 	@GetMapping("/update-admin")
 	public String UpdateArea(@RequestParam("id") int theId,Model theModel) {
-		
+		this.lastseen();
 		System.out.println(theId);
 		
 		Admin admin=adminServiceImplementation.findById(theId);
@@ -189,7 +161,7 @@ public class AdminController {
 	
 	@GetMapping("/delete-admin")
 	public String delete(@RequestParam("id") int theId,Model theModel) {
-		
+		this.lastseen();
 		System.out.println(theId);
 		
 		adminServiceImplementation.deleteById(theId);
