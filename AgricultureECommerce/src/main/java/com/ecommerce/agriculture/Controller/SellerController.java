@@ -95,6 +95,8 @@ public class SellerController {
 		item.setSellerMob(admin1.getMobile());
 		item.setViews(0);
 		item.setActive(true);
+		
+		itemServiceImplementation.save(item);
 		return "redirect:/seller/item-details";
 	}
 
