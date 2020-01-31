@@ -134,7 +134,7 @@ public class AdminController {
 	public String saveEmploye(@ModelAttribute("doctor") Admin admin) {
 		
 		// save the employee
-	//	admin.setId(0);
+		admin.setId(0);
 		
 		admin.setUser(admin.getEmail());
 		
@@ -198,7 +198,7 @@ public class AdminController {
 			
 	
 	@PostMapping("/update")
-	public String update(@ModelAttribute("profile") Admin admin) {
+	public String update(@ModelAttribute("admin") Admin admin) {
 		
 		
 		System.out.println(admin);
@@ -206,7 +206,7 @@ public class AdminController {
 		adminServiceImplementation.save(admin);
 		
 		// use a redirect to prevent duplicate submissions
-		return "redirect:/admin/user-details";
+		return "redirect:/admin/editAdmin";
 	}
 	
 	@GetMapping("/update-admin")
@@ -219,7 +219,7 @@ public class AdminController {
 		
 		theModel.addAttribute("admin",admin);
 		
-		return "admin/updateUser";
+		return "redirect:admin/admin-details";
 	}
 	
 	@GetMapping("/delete-admin")
