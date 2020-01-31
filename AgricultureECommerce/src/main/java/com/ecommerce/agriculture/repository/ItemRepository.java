@@ -12,7 +12,7 @@ import com.ecommerce.agriculture.entity.Item;
  * @github soumyadip007
  *
  */
-@Repository("adminRepository")
+@Repository("itemRepository")
 public interface ItemRepository extends JpaRepository<Item, Integer> {
 
 	Item findById(int user);
