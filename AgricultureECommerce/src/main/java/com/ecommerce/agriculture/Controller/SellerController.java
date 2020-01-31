@@ -107,7 +107,7 @@ public class SellerController {
 		
 		
 		String p=this.lastseen();
-		model.addAttribute("user",p);       
+		model.addAttribute("name",p);       
 		List<Item> list=itemServiceImplementation.findAll();
 		model.addAttribute("user", list);
 		
