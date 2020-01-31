@@ -34,7 +34,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-		// use jdbc authentication ... oh yeah!!!
 		  auth.jdbcAuthentication().dataSource(securityDataSource)
 		  .usersByUsernameQuery(
 		   "select username,password,enabled from user where username=?")
