@@ -94,6 +94,7 @@ public class SellerController {
 		item.setSellerEmail(admin1.getEmail());
 		item.setSellerMob(admin1.getMobile());
 		item.setViews(0);
+		item.setActive(true);
 		return "redirect:/seller/item-details";
 	}
 
