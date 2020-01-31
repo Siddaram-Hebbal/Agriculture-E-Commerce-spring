@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.entity.Item;
@@ -61,6 +62,40 @@ public class SellerController {
 		itemServiceImplementation.save(item);
 		
 		return "redirect:/admin/admin-details";
+	}
+	
+	@PostMapping("/update")
+	public String update(@ModelAttribute("admin") Admin admin) {
+		
+		this.lastseen();
+		System.out.println(admin);
+		
+		adminServiceImplementation.save(admin);
+		
+		return "redirect:/admin/admin-details";
+	}
+	
+	@GetMapping("/update-admin")
+	public String UpdateArea(@RequestParam("id") int theId,Model theModel) {
+		this.lastseen();
+		System.out.println(theId);
+		
+		Admin admin=adminServiceImplementation.findById(theId);
+		System.out.println(admin);
+		
+		theModel.addAttribute("admin",admin);
+		
+		return "admin/editAdmin";
+	}
+	
+	@GetMapping("/delete-admin")
+	public String delete(@RequestParam("id") int theId,Model theModel) {
+		this.lastseen();
+		System.out.println(theId);
+		
+		adminServiceImplementation.deleteById(theId);
+	
+		return "redirect:/admin/add-admin";
 	}
 	
 	
