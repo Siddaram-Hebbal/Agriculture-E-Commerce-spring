@@ -1,26 +1,14 @@
 package com.ecommerce.agriculture.Controller;
 
-import java.util.Map;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ecommerce.agriculture.entity.Seller;
+import com.ecommerce.agriculture.service.AdminServiceImplementation;
 import com.ecommerce.agriculture.service.EmailService;
-import com.ecommerce.agriculture.service.UserService;
-import com.nulabinc.zxcvbn.Strength;
-import com.nulabinc.zxcvbn.Zxcvbn;
 
 /**
  * 
@@ -31,15 +19,12 @@ import com.nulabinc.zxcvbn.Zxcvbn;
 @Controller
 public class RegisterController {
 	
-	//private BCryptPasswordEncoder bCryptPasswordEncoder;
-	private UserService userService;
+	private AdminServiceImplementation a;
 	private EmailService emailService;
 	
 	@Autowired
-	public RegisterController(
-			UserService userService, EmailService emailService) {
-		//this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-		this.userService = userService;
+	public RegisterController(AdminServiceImplementation a,EmailService emailService) {
+		this.a=a;
 		this.emailService = emailService;
 	}
 	
@@ -51,13 +36,13 @@ public class RegisterController {
 		modelAndView.setViewName("register");
 		return modelAndView;
 	}
-	
+	/*
 	// Process form input data
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ModelAndView processRegistrationForm(ModelAndView modelAndView, @Valid Seller user, BindingResult bindingResult, HttpServletRequest request) {
 				
 		// Lookup user in database by e-mail
-		Seller userExists = userService.findByEmail(user.getEmail());
+		Admin userExists = a.findByEmail(user.getEmail());
 		
 		System.out.println(userExists);
 		
@@ -157,6 +142,6 @@ public class RegisterController {
 		return modelAndView;		
 	}
 	
-	
+	*/
 	
 }
