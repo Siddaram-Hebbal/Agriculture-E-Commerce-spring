@@ -34,7 +34,8 @@ public class SellerController {
 	
 	
 	@Autowired
-	public SellerController(ItemServiceImplementation objA, AdminServiceImplementation adminServiceImplementation) {
+	public SellerController(ItemServiceImplementation objA,
+			AdminServiceImplementation adminServiceImplementation) {
 	
 		this.itemServiceImplementation=objA;
 		this.adminServiceImplementation=adminServiceImplementation;
@@ -63,7 +64,7 @@ public class SellerController {
 		
 		itemServiceImplementation.save(item);
 		
-		return "redirect:/admin/admin-details";
+		return "redirect:/seller/item-details";
 	}
 
 	
@@ -75,7 +76,7 @@ public class SellerController {
 		
 		itemServiceImplementation.save(admin);
 		
-		return "redirect:/admin/admin-details";
+		return "redirect:/seller/item-details";
 	}
 	
 	@GetMapping("/update-item")
@@ -88,17 +89,17 @@ public class SellerController {
 		
 		theModel.addAttribute("admin",admin);
 		
-		return "admin/editAdmin";
+		return "seller/update";
 	}
 	
-	@GetMapping("/delete-admin")
+	@GetMapping("/delete-item")
 	public String delete(@RequestParam("id") int theId,Model theModel) {
 		this.lastseen();
 		System.out.println(theId);
 		
 		itemServiceImplementation.deleteById(theId);
 	
-		return "redirect:/admin/add-admin";
+		return "redirect:/seller/item-details";
 	}
 	
 	
