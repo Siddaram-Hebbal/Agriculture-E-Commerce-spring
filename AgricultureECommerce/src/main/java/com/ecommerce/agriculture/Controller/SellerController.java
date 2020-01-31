@@ -56,7 +56,7 @@ public class SellerController {
 		admin1.setLastseen(log);
 		adminServiceImplementation.save(admin1);
 		
-		return "seller/index";
+		return "seller/addItems";
 	}
 	
 	
