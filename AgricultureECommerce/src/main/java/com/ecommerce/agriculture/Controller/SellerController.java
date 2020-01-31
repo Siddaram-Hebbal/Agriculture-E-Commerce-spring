@@ -2,6 +2,7 @@ package com.ecommerce.agriculture.Controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -67,6 +68,26 @@ public class SellerController {
 		return "redirect:/seller/item-details";
 	}
 
+	
+	@RequestMapping("/item-details")
+	public String itemDetails(Model model){
+		
+		
+		this.lastseen();
+			         
+		List<Item> list=itemServiceImplementation.findAll();
+		model.addAttribute("item", list);
+		
+		
+		return "seller/items";
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	@PostMapping("/update")
 	public String updateP(@ModelAttribute("item") Item admin) {
