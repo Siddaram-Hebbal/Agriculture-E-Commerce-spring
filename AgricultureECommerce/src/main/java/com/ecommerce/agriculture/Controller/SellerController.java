@@ -84,11 +84,6 @@ public class SellerController {
 	
 	
 	
-	
-	
-	
-	
-	
 	@PostMapping("/update")
 	public String updateP(@ModelAttribute("item") Item admin) {
 		
@@ -141,6 +136,7 @@ public class SellerController {
 		}
 		System.out.println("One + "+username+"   "+Pass);
 		Admin admin1 = adminServiceImplementation.findByUser(username);
+		System.out.println(admin1);
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
 		Date now = new Date();  
 		String log=now.toString();
