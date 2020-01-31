@@ -41,30 +41,7 @@ public class AdminController {
 	public String adminDetails(Model model){
 		
 		
-		// get last seen
-		String username="";
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-		   username = ((UserDetails)principal).getUsername();
-		  String Pass = ((UserDetails)principal).getPassword();
-		  System.out.println("One + "+username+"   "+Pass);
-		  
-		  
-		} else {
-		 username = principal.toString();
-		  System.out.println("Two + "+username);
-		}
-		
-		Admin admin = adminServiceImplementation.findByEmail(username);
-				 
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-		    Date now = new Date();  
-		    
-		         String log=now.toString();
-		    
-		         admin.setLastseen(log);
-		         
-		         adminServiceImplementation.save(admin);
+		this.lastseen();
 		
 		
 		         
@@ -220,6 +197,27 @@ public class AdminController {
 		return "redirect:/admin/add-admin";
 	}
 	
+	
+	public void lastseen()
+	{
+		String username="";
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+		   username = ((UserDetails)principal).getUsername();
+		  String Pass = ((UserDetails)principal).getPassword();
+		  System.out.println("One + "+username+"   "+Pass);
+		  	} else {
+		 username = principal.toString();
+		  System.out.println("Two + "+username);
+		}
+		Admin admin1 = adminServiceImplementation.findByEmail(username);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		Date now = new Date();  
+		String log=now.toString();
+		admin1.setLastseen(log);
+		adminServiceImplementation.save(admin1);
+	
+	}
 
 
 }
