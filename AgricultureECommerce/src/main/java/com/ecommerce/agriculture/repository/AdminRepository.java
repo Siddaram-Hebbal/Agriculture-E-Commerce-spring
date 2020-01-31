@@ -21,6 +21,5 @@ public interface AdminRepository extends JpaRepository<Admin, Integer> {
 	
 	Admin findById(int user);
 	
-	
 	List<Admin> findByRole(String user);
 }
