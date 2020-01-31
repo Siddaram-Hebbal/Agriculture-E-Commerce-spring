@@ -22,6 +22,30 @@ import com.ecommerce.agriculture.service.AdminServiceImplementation;
 @RequestMapping("/seller")
 public class SellerController {
 
+
+	private AdminServiceImplementation adminServiceImplementation;
+	
+	
+	@Autowired
+	public SellerController(AdminServiceImplementation obj) {
+	
+		adminServiceImplementation=obj;
+	}
+	
+	
+	@RequestMapping("/index")
+	public String index(Model model){
+
+		this.lastseen();
+			
+		return "seller/addItems";
+	}
+	
+	
+	
+	
+	
+	
 	public void lastseen()
 	{
 		String username="";
@@ -42,25 +66,5 @@ public class SellerController {
 		adminServiceImplementation.save(admin1);
 	
 	}
-	
-	private AdminServiceImplementation adminServiceImplementation;
-	
-	
-	@Autowired
-	public SellerController(AdminServiceImplementation obj) {
-	
-		adminServiceImplementation=obj;
-	}
-	
-	
-	@RequestMapping("/index")
-	public String index(Model model){
-
-		this.lastseen();
-		
-		
-		return "seller/addItems";
-	}
-	
 	
 }
