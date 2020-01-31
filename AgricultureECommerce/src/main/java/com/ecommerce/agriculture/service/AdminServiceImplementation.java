@@ -40,7 +40,6 @@ public class AdminServiceImplementation implements AdminService {
 
 	@Override
 	public Admin findByEmail(String user) {
-		// TODO Auto-generated method stub
 		
 		return adminRepository.findByEmail(user);
 		
