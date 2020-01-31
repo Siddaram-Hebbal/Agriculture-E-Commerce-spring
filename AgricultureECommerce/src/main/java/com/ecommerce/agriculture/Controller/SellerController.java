@@ -40,8 +40,7 @@ public class SellerController {
 		this.lastseen();
 			
 		Item admin=new Item();
-		// create model attribute to bind form data
-	
+		
 		model.addAttribute("item", admin);
 		
 		return "seller/addItems";
