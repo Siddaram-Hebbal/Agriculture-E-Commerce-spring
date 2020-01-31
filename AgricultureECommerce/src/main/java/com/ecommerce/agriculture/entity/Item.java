@@ -43,6 +43,8 @@ public class Item {
 	@Column(name = "itemIMG")
 	private String itemIMG;
 
+	@Column(name = "itemQty")
+	private boolean itemQty;
 
 	@Column(name = "itemSeason")
 	private String itemSeason;
@@ -134,6 +136,16 @@ public class Item {
 
 	public void setItemIMG(String itemIMG) {
 		this.itemIMG = itemIMG;
+	}
+
+
+	public boolean isItemQty() {
+		return itemQty;
+	}
+
+
+	public void setItemQty(boolean itemQty) {
+		this.itemQty = itemQty;
 	}
 
 
@@ -240,11 +252,14 @@ public class Item {
 	@Override
 	public String toString() {
 		return "Item [id=" + id + ", itemID=" + itemID + ", itemName=" + itemName + ", itemPrice=" + itemPrice
-				+ ", itemType=" + itemType + ", itemIMG=" + itemIMG + ", itemSeason=" + itemSeason + ", desc=" + desc
-				+ ", sellerID=" + sellerID + ", sellerName=" + sellerName + ", sellerAddress=" + sellerAddress
-				+ ", sellerLatt=" + sellerLatt + ", sellerLongi=" + sellerLongi + ", sellerMob=" + sellerMob
-				+ ", views=" + views + ", active=" + active + "]";
+				+ ", itemType=" + itemType + ", itemIMG=" + itemIMG + ", itemQty=" + itemQty + ", itemSeason="
+				+ itemSeason + ", desc=" + desc + ", sellerID=" + sellerID + ", sellerName=" + sellerName
+				+ ", sellerAddress=" + sellerAddress + ", sellerLatt=" + sellerLatt + ", sellerLongi=" + sellerLongi
+				+ ", sellerMob=" + sellerMob + ", views=" + views + ", active=" + active + "]";
 	}
+
+
+	
 	
 	
 }
