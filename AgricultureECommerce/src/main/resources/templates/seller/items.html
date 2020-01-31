@@ -185,11 +185,11 @@
        	<tr th:each="temp : ${user}">
        	
   		<td  th:text="${temp.id}" />	
-				<td   th:text="${temp.firstName}" />	
-				 <td th:text="${temp.lastName}"/>
-				<td   th:text="${temp.email}" />	
-					<td  th:text="${temp.gender}" />	
-				<td th:text="${temp.lastseen}" />		
+				<td   th:text="${temp.itemname}" />	
+				 <td th:text="${temp.itemprice}"/>
+				<td   th:text="${temp.itemtype}" />	
+					<td  th:text="${temp.itemseason}" />	
+					
 			<td > <a th:href="@{/admin/update-admin(id=${temp.id})}" class="btn btn-success">Update</a></td>
 					
 					
