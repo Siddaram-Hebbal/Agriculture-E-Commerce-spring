@@ -17,6 +17,8 @@ import com.ecommerce.agriculture.entity.Seller;
 @Repository("adminRepository")
 public interface AdminRepository extends JpaRepository<Admin, Integer> {
 
+	Admin findByUser(String user);
+	
 	Admin findByEmail(String user);
 	
 	Admin findById(int user);
