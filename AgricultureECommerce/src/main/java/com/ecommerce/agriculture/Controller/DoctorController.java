@@ -2,7 +2,6 @@ package com.ecommerce.agriculture.Controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -12,9 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ecommerce.agriculture.entity.Admin;
-import com.ecommerce.agriculture.entity.Appointment;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
-import com.ecommerce.agriculture.service.AppointmentServiceImplementation;
 import com.ecommerce.agriculture.service.UserService;
 
 /**
@@ -30,23 +27,17 @@ public class DoctorController {
 
 	private AdminServiceImplementation adminServiceImplementation;
 	
-	private AppointmentServiceImplementation appointmentServiceImplementation;
-
 	
 	@Autowired
-	public DoctorController(UserService userService,AdminServiceImplementation obj,
-			AppointmentServiceImplementation app) {
+	public DoctorController(UserService userService,AdminServiceImplementation obj) {
 		this.userService = userService;
 		adminServiceImplementation=obj;
-		appointmentServiceImplementation=app;
 	}
 	
 	
 	@RequestMapping("/index")
 	public String index(Model model){
 
-	
-		
 		// get last seen
 		String username="";
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -54,39 +45,18 @@ public class DoctorController {
 		   username = ((UserDetails)principal).getUsername();
 		  String Pass = ((UserDetails)principal).getPassword();
 		  System.out.println("One + "+username+"   "+Pass);
-		  
-		  
-		} else {
+		  	} else {
 		 username = principal.toString();
 		  System.out.println("Two + "+username);
 		}
+		Admin admin1 = adminServiceImplementation.findByEmail(username);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		Date now = new Date();  
+		String log=now.toString();
+		admin1.setLastseen(log);
+		adminServiceImplementation.save(admin1);
 		
-		Admin admin = adminServiceImplementation.findByEmail(username);
-				 
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-		    Date now = new Date();  
-		    
-		         String log=now.toString();
-		    
-		         admin.setLastseen(log);
-		         
-		         adminServiceImplementation.save(admin);
-		
-		
-		         
-		List<Appointment> list=appointmentServiceImplementation.findAll();
-		
-		model.addAttribute("name",admin.getFirstName());
-		
-		model.addAttribute("email",admin.getEmail());
-		
-		
-		model.addAttribute("user",admin.getFirstName()+" "+admin.getLastName());
-		
-		// add to the spring model
-		model.addAttribute("app", list);
-		
-		return "doctor/index";
+		return "seller/index";
 	}
 	
 	
