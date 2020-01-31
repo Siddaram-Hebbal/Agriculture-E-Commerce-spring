@@ -60,7 +60,6 @@ public class AdminController {
 		
 		
 		Admin admin=new Admin();
-		// create model attribute to bind form data
 	
 		theModel.addAttribute("admin", admin);
 		
@@ -71,7 +70,6 @@ public class AdminController {
 	@PostMapping("/save-admin")
 	public String saveEmploye(@ModelAttribute("doctor") Admin admin) {
 		
-		// save the employee
 		admin.setId(0);
 		
 		admin.setUser(admin.getEmail());
