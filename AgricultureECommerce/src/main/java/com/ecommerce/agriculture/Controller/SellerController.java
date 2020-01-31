@@ -21,7 +21,7 @@ import com.ecommerce.agriculture.service.UserService;
  */
 @Controller
 @RequestMapping("/seller")
-public class DoctorController {
+public class SellerController {
 
 	private UserService userService;
 
@@ -29,7 +29,7 @@ public class DoctorController {
 	
 	
 	@Autowired
-	public DoctorController(UserService userService,AdminServiceImplementation obj) {
+	public SellerController(UserService userService,AdminServiceImplementation obj) {
 		this.userService = userService;
 		adminServiceImplementation=obj;
 	}
