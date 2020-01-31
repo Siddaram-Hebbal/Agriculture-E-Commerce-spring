@@ -73,7 +73,7 @@ public class Item {
 	private String sellerMob;
 	
 	@Column(name = "views")
-	private String views;
+	private int views;
 	
 	
 	@Column(name = "active")
@@ -230,12 +230,12 @@ public class Item {
 	}
 
 
-	public String getViews() {
+	public int getViews() {
 		return views;
 	}
 
 
-	public void setViews(String views) {
+	public void setViews(int views) {
 		this.views = views;
 	}
 
