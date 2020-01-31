@@ -29,47 +29,47 @@ public class Item {
 	
 	
 
-	@Column(name = "itemName")
+	@Column(name = "itemname")
 	private String itemName;
 
-	@Column(name = "itemPrice")
+	@Column(name = "itemprice")
 	private String itemPrice;
 
-	@Column(name = "itemType")
+	@Column(name = "itemtype")
 	private String itemType;
 
-	@Column(name = "itemIMG")
+	@Column(name = "itemimg")
 	private String itemIMG;
 
-	@Column(name = "itemQty")
-	private boolean itemQty;
+	@Column(name = "itemqty")
+	private String itemQty;
 
-	@Column(name = "itemSeason")
+	@Column(name = "itemseason")
 	private String itemSeason;
 	
 	@Column(name = "descc")
 	private String desc;
 	
-	@Column(name = "sellerID")
+	@Column(name = "sellerid")
 	private String sellerID;
 	
-	@Column(name = "sellerName")
+	@Column(name = "sellername")
 	private String sellerName;
 	
 	
-	@Column(name = "sellerAddress")
+	@Column(name = "selleraddress")
 	private String sellerAddress;
 
-	@Column(name = "sellerLatt")
+	@Column(name = "sellerlatt")
 	private String sellerLatt;
 
-	@Column(name = "sellerEmail")
+	@Column(name = "selleremail")
 	private String sellerEmail;
 	
-	@Column(name = "sellerLongi")
+	@Column(name = "sellerlongi")
 	private String sellerLongi;
 	
-	@Column(name = "sellerMob")
+	@Column(name = "sellermob")
 	private String sellerMob;
 	
 	@Column(name = "views")
@@ -130,12 +130,12 @@ public class Item {
 	}
 
 
-	public boolean isItemQty() {
+	public String getItemQty() {
 		return itemQty;
 	}
 
 
-	public void setItemQty(boolean itemQty) {
+	public void setItemQty(String itemQty) {
 		this.itemQty = itemQty;
 	}
 
