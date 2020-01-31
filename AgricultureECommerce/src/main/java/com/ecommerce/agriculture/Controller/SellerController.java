@@ -127,7 +127,7 @@ public class SellerController {
 		this.lastseen();
 			         
 		List<Item> list=itemServiceImplementation.findAll();
-		model.addAttribute("item", list);
+		model.addAttribute("user", list);
 		
 		
 		return "seller/items";
