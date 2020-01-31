@@ -19,7 +19,7 @@ import org.springframework.data.annotation.Transient;
  */
 @Entity
 @Table(name = "user")
-public class User {
+public class Seller {
 
 
 	@Id
