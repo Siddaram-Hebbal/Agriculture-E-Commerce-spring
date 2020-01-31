@@ -144,7 +144,12 @@
           <h1 class="h3 mb-2 text-gray-800">Add Items /
 सामान जोडें</h1>
           <p class="mb-4"></p>
-  <form class="user">
+ 	
+	<form  th:action="@{/user/save}"
+						 th:object="${item}" method="POST">
+						 
+	<input type="hidden" th:field="*{id}" />
+	
   <!-- id	
   itemName
   	itemPrice
