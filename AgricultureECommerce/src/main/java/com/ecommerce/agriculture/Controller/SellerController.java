@@ -45,28 +45,10 @@ public class SellerController {
 	
 	@GetMapping("/add-items")
 	public String index(Model model){
-		String username="";
-		String Pass = "";
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-		   username = ((UserDetails)principal).getUsername();
-		   Pass = ((UserDetails)principal).getPassword();
-		  System.out.println("One + "+username+"   "+Pass);
-		  	} else {
-		 username = principal.toString();
-		  System.out.println("Two + "+username);
-		}
-		System.out.println("One + "+username+"   "+Pass);
-		Admin admin1 = adminServiceImplementation.findByUser(username);
-		System.out.println(admin1);
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-		Date now = new Date();  
-		String log=now.toString();
-		admin1.setLastseen(log);
-		adminServiceImplementation.save(admin1);
 
-		model.addAttribute("user",admin1.getFirstName()+" "+admin1.getLastName());
 		
+		String p=this.lastseen();
+		model.addAttribute("user",p);   
 		Item item=new Item();
 		
 		model.addAttribute("item", item);
@@ -124,8 +106,8 @@ public class SellerController {
 	public String itemDetails(Model model){
 		
 		
-		this.lastseen();
-			         
+		String p=this.lastseen();
+		model.addAttribute("user",p);       
 		List<Item> list=itemServiceImplementation.findAll();
 		model.addAttribute("user", list);
 		
@@ -172,7 +154,7 @@ public class SellerController {
 	
 	
 	
-	public void lastseen()
+	public String lastseen()
 	{
 		String username="";
 		String Pass = "";
@@ -193,7 +175,9 @@ public class SellerController {
 		String log=now.toString();
 		admin1.setLastseen(log);
 		adminServiceImplementation.save(admin1);
-	
+		
+		return admin1.getFirstName()+" "+admin1.getLastName();
+		
 	}
 	
 }
