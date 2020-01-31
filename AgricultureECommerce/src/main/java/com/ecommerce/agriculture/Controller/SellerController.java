@@ -48,10 +48,10 @@ public class SellerController {
 
 		this.lastseen();
 			
-//		Item item=new Item();
-//		
-//		model.addAttribute("item", item);
-//		
+		Item item=new Item();
+		
+		model.addAttribute("item", item);
+		
 		return "seller/addItems";
 	}
 	
