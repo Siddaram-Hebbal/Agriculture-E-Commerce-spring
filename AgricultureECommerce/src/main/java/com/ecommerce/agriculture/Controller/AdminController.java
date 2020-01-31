@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
-import com.ecommerce.agriculture.service.UserService;
 
 /**
  * 
@@ -29,15 +28,11 @@ import com.ecommerce.agriculture.service.UserService;
 @RequestMapping("/admin")
 public class AdminController {
 	
-
-	private UserService userService;
-
 	private AdminServiceImplementation adminServiceImplementation;
 	
 	@Autowired
-	public AdminController(UserService userService,AdminServiceImplementation obj) {
-		this.userService = userService;
-		adminServiceImplementation=obj;
+	public AdminController(AdminServiceImplementation obj) {
+		this.adminServiceImplementation=obj;
 	}
 	
 	
