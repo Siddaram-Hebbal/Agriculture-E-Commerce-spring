@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.ecommerce.agriculture.entity.User;
+import com.ecommerce.agriculture.entity.Seller;
 import com.ecommerce.agriculture.service.EmailService;
 import com.ecommerce.agriculture.service.UserService;
 import com.nulabinc.zxcvbn.Strength;
@@ -46,7 +46,7 @@ public class RegisterController {
 	// Return registration form template
 	@RequestMapping(value="/register", method = RequestMethod.GET)
 
-	public ModelAndView showRegistrationPage(ModelAndView modelAndView, User user){
+	public ModelAndView showRegistrationPage(ModelAndView modelAndView, Seller user){
 		modelAndView.addObject("user", user);
 		modelAndView.setViewName("register");
 		return modelAndView;
@@ -54,10 +54,10 @@ public class RegisterController {
 	
 	// Process form input data
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ModelAndView processRegistrationForm(ModelAndView modelAndView, @Valid User user, BindingResult bindingResult, HttpServletRequest request) {
+	public ModelAndView processRegistrationForm(ModelAndView modelAndView, @Valid Seller user, BindingResult bindingResult, HttpServletRequest request) {
 				
 		// Lookup user in database by e-mail
-		User userExists = userService.findByEmail(user.getEmail());
+		Seller userExists = userService.findByEmail(user.getEmail());
 		
 		System.out.println(userExists);
 		
@@ -107,7 +107,7 @@ public class RegisterController {
 	@RequestMapping(value="/confirm", method = RequestMethod.GET)
 	public ModelAndView confirmRegistration(ModelAndView modelAndView, @RequestParam("token") String token) {
 			
-		User user = userService.findByConfirmationToken(token);
+		Seller user = userService.findByConfirmationToken(token);
 			
 		if (user == null) { // No token found in DB
 			modelAndView.addObject("invalidToken", "Oops!  This is an invalid confirmation link.");
@@ -141,7 +141,7 @@ public class RegisterController {
 		}
 	
 		// Find the user associated with the reset token
-		User user = userService.findByConfirmationToken(requestParams.get("token"));
+		Seller user = userService.findByConfirmationToken(requestParams.get("token"));
 
 		// Set new password
 	//	user.setPassword(bCryptPasswordEncoder.encode(requestParams.get("password")));
