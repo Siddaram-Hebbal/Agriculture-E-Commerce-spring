@@ -45,7 +45,12 @@ public class AdminServiceImplementation implements AdminService {
 		return adminRepository.findByEmail(user);
 		
 	}
-
+	@Override
+	public Admin findByUser(String user) {
+		
+		return adminRepository.findByEmail(user);
+		
+	}
 	@Override
 	public List<Admin> findByRole(String user) {
 		
