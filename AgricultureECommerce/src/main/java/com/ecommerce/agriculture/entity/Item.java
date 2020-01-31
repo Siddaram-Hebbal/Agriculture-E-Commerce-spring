@@ -28,8 +28,6 @@ public class Item {
 	private int id;
 	
 	
-	@Column(name = "itemID")
-	private String itemID;
 
 	@Column(name = "itemName")
 	private String itemName;
@@ -49,7 +47,7 @@ public class Item {
 	@Column(name = "itemSeason")
 	private String itemSeason;
 	
-	@Column(name = "desc")
+	@Column(name = "descc")
 	private String desc;
 	
 	@Column(name = "sellerID")
@@ -65,7 +63,10 @@ public class Item {
 	@Column(name = "sellerLatt")
 	private String sellerLatt;
 
-	@Column(name = "sellerLatt")
+	@Column(name = "sellerEmail")
+	private String sellerEmail;
+	
+	@Column(name = "sellerLongi")
 	private String sellerLongi;
 	
 	@Column(name = "sellerMob")
@@ -86,16 +87,6 @@ public class Item {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-
-	public String getItemID() {
-		return itemID;
-	}
-
-
-	public void setItemID(String itemID) {
-		this.itemID = itemID;
 	}
 
 
@@ -209,6 +200,16 @@ public class Item {
 	}
 
 
+	public String getSellerEmail() {
+		return sellerEmail;
+	}
+
+
+	public void setSellerEmail(String sellerEmail) {
+		this.sellerEmail = sellerEmail;
+	}
+
+
 	public String getSellerLongi() {
 		return sellerLongi;
 	}
@@ -251,15 +252,14 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", itemID=" + itemID + ", itemName=" + itemName + ", itemPrice=" + itemPrice
-				+ ", itemType=" + itemType + ", itemIMG=" + itemIMG + ", itemQty=" + itemQty + ", itemSeason="
-				+ itemSeason + ", desc=" + desc + ", sellerID=" + sellerID + ", sellerName=" + sellerName
-				+ ", sellerAddress=" + sellerAddress + ", sellerLatt=" + sellerLatt + ", sellerLongi=" + sellerLongi
+		return "Item [id=" + id + ", itemName=" + itemName + ", itemPrice=" + itemPrice + ", itemType=" + itemType
+				+ ", itemIMG=" + itemIMG + ", itemQty=" + itemQty + ", itemSeason=" + itemSeason + ", desc=" + desc
+				+ ", sellerID=" + sellerID + ", sellerName=" + sellerName + ", sellerAddress=" + sellerAddress
+				+ ", sellerLatt=" + sellerLatt + ", sellerEmail=" + sellerEmail + ", sellerLongi=" + sellerLongi
 				+ ", sellerMob=" + sellerMob + ", views=" + views + ", active=" + active + "]";
 	}
 
 
-	
 	
 	
 }
