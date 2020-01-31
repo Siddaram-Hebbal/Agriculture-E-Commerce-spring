@@ -48,10 +48,10 @@ public class SellerController {
 
 		this.lastseen();
 			
-		Item item=new Item();
-		
-		model.addAttribute("item", item);
-		
+//		Item item=new Item();
+//		
+//		model.addAttribute("item", item);
+//		
 		return "seller/addItems";
 	}
 	
@@ -129,10 +129,11 @@ public class SellerController {
 	public void lastseen()
 	{
 		String username="";
+		String Pass = "";
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		if (principal instanceof UserDetails) {
 		   username = ((UserDetails)principal).getUsername();
-		  String Pass = ((UserDetails)principal).getPassword();
+		   Pass = ((UserDetails)principal).getPassword();
 		  System.out.println("One + "+username+"   "+Pass);
 		  	} else {
 		 username = principal.toString();
