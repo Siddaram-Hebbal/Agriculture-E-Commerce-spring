@@ -94,7 +94,6 @@ public class AdminController {
 		
 		adminServiceImplementation.save(admin);
 		
-		// use a redirect to prevent duplicate submissions
 		return "redirect:/admin/add-admin";
 	}
 	
@@ -111,8 +110,6 @@ public class AdminController {
 		 username = principal.toString();
 		  System.out.println("Two + "+username);
 		}	
-		
-		// get the employee from the service
 		
 		Admin admin = adminServiceImplementation.findByEmail(username);
 				 
