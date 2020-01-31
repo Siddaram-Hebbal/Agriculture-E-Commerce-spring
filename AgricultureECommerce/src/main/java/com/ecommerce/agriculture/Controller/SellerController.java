@@ -8,11 +8,15 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.entity.Item;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
+import com.ecommerce.agriculture.service.ItemServiceImplementation;
 
 /**
  * 
@@ -24,17 +28,19 @@ import com.ecommerce.agriculture.service.AdminServiceImplementation;
 public class SellerController {
 
 
+	private ItemServiceImplementation itemServiceImplementation;
 	private AdminServiceImplementation adminServiceImplementation;
 	
 	
 	@Autowired
-	public SellerController(AdminServiceImplementation obj) {
+	public SellerController(ItemServiceImplementation objA, AdminServiceImplementation adminServiceImplementation) {
 	
-		adminServiceImplementation=obj;
+		itemServiceImplementation=objA;
+		this.adminServiceImplementation=adminServiceImplementation;
 	}
 	
 	
-	@RequestMapping("/index")
+	@GetMapping("/index")
 	public String index(Model model){
 
 		this.lastseen();
@@ -46,7 +52,16 @@ public class SellerController {
 		return "seller/addItems";
 	}
 	
-	
+	@PostMapping("/index")
+	public String update(@ModelAttribute("item") Item item) {
+		
+		this.lastseen();
+		System.out.println(item);
+		
+		itemServiceImplementation.save(item);
+		
+		return "redirect:/admin/admin-details";
+	}
 	
 	
 	
