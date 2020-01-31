@@ -39,9 +39,9 @@ public class SellerController {
 
 		this.lastseen();
 			
-		Item admin=new Item();
+		Item item=new Item();
 		
-		model.addAttribute("item", admin);
+		model.addAttribute("item", item);
 		
 		return "seller/addItems";
 	}
