@@ -35,7 +35,7 @@ public class SellerController {
 	@Autowired
 	public SellerController(ItemServiceImplementation objA, AdminServiceImplementation adminServiceImplementation) {
 	
-		itemServiceImplementation=objA;
+		this.itemServiceImplementation=objA;
 		this.adminServiceImplementation=adminServiceImplementation;
 	}
 	
