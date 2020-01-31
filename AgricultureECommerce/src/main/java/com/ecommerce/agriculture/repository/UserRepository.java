@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ecommerce.agriculture.entity.User;
+import com.ecommerce.agriculture.entity.Seller;
 /**
  * 
  * @author Soumyadip Chowdhury
@@ -16,12 +16,12 @@ import com.ecommerce.agriculture.entity.User;
  *
  */
 @Repository("userRepository")
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface UserRepository extends CrudRepository<Seller, Long> {
 	
 	
-	 User findByEmail(String email);
+	 Seller findByEmail(String email);
 	
-	 User findByConfirmationToken(String confirmationToken);
+	 Seller findByConfirmationToken(String confirmationToken);
 	 
-	  List<User> findAll();
+	  List<Seller> findAll();
 }
