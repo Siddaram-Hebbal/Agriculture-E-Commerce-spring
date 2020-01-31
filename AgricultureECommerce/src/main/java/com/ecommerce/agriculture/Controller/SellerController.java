@@ -116,7 +116,7 @@ public class SellerController {
 		 username = principal.toString();
 		  System.out.println("Two + "+username);
 		}
-		Admin admin1 = adminServiceImplementation.findByEmail(username);
+		Admin admin1 = adminServiceImplementation.findByUser(username);
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
 		Date now = new Date();  
 		String log=now.toString();
