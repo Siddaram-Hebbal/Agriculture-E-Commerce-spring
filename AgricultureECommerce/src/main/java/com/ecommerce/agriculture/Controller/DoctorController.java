@@ -23,7 +23,7 @@ import com.ecommerce.agriculture.service.UserService;
  *
  */
 @Controller
-@RequestMapping("/doctor")
+@RequestMapping("/seller")
 public class DoctorController {
 
 	private UserService userService;
