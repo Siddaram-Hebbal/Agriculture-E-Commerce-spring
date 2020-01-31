@@ -53,34 +53,25 @@ public class SellerController {
 		return "seller/addItems";
 	}
 	
-	@PostMapping("/index")
-	public String update(@ModelAttribute("item") Item item) {
-		
-		this.lastseen();
-		System.out.println(item);
-		
-		itemServiceImplementation.save(item);
-		
-		return "redirect:/admin/admin-details";
-	}
+
 	
 	@PostMapping("/update")
-	public String update(@ModelAttribute("admin") Admin admin) {
+	public String updateP(@ModelAttribute("item") Item admin) {
 		
 		this.lastseen();
 		System.out.println(admin);
 		
-		adminServiceImplementation.save(admin);
+		itemServiceImplementation.save(admin);
 		
 		return "redirect:/admin/admin-details";
 	}
 	
-	@GetMapping("/update-admin")
-	public String UpdateArea(@RequestParam("id") int theId,Model theModel) {
+	@GetMapping("/update-item")
+	public String Update(@RequestParam("id") int theId,Model theModel) {
 		this.lastseen();
 		System.out.println(theId);
 		
-		Admin admin=adminServiceImplementation.findById(theId);
+		Item admin=itemServiceImplementation.findById(theId);
 		System.out.println(admin);
 		
 		theModel.addAttribute("admin",admin);
@@ -93,7 +84,7 @@ public class SellerController {
 		this.lastseen();
 		System.out.println(theId);
 		
-		adminServiceImplementation.deleteById(theId);
+		itemServiceImplementation.deleteById(theId);
 	
 		return "redirect:/admin/add-admin";
 	}
