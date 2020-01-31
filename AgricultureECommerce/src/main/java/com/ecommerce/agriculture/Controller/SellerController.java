@@ -53,6 +53,18 @@ public class SellerController {
 		return "seller/addItems";
 	}
 	
+	
+	@PostMapping("/save")
+	public String save(@ModelAttribute("item") Item item) {
+		
+		this.lastseen();
+		item.setId(0);
+		System.out.println(item);
+		
+		itemServiceImplementation.save(item);
+		
+		return "redirect:/admin/admin-details";
+	}
 
 	
 	@PostMapping("/update")
