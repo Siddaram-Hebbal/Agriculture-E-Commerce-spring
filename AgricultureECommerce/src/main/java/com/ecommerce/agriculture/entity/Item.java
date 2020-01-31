@@ -73,7 +73,7 @@ public class Item {
 	private String views;
 	
 	
-	@Column(name = "views")
+	@Column(name = "active")
 	private boolean active;
 
 
@@ -234,6 +234,16 @@ public class Item {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", itemID=" + itemID + ", itemName=" + itemName + ", itemPrice=" + itemPrice
+				+ ", itemType=" + itemType + ", itemIMG=" + itemIMG + ", itemSeason=" + itemSeason + ", desc=" + desc
+				+ ", sellerID=" + sellerID + ", sellerName=" + sellerName + ", sellerAddress=" + sellerAddress
+				+ ", sellerLatt=" + sellerLatt + ", sellerLongi=" + sellerLongi + ", sellerMob=" + sellerMob
+				+ ", views=" + views + ", active=" + active + "]";
 	}
 	
 	
