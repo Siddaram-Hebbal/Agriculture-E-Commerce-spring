@@ -19,8 +19,7 @@ public class ItemServiceImplementation implements ItemService {
 
 	private ItemRepository itemRepository;
 
-	//inject employee dao
-	@Autowired   //Adding bean id @Qualifier
+	@Autowired   
 	public ItemServiceImplementation( ItemRepository obj)
 	{
 		itemRepository=obj;
@@ -37,9 +36,6 @@ public class ItemServiceImplementation implements ItemService {
 		
 		itemRepository.save(admin);
 	}
-
-	
-
 	@Override
 	public void deleteById(int theId) {
 		
