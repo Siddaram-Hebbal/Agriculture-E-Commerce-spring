@@ -20,8 +20,7 @@ public class AdminServiceImplementation implements AdminService {
 
 	private AdminRepository adminRepository;
 
-	//inject employee dao
-	@Autowired   //Adding bean id @Qualifier
+	@Autowired   
 	public AdminServiceImplementation( AdminRepository obj)
 	{
 		adminRepository=obj;
