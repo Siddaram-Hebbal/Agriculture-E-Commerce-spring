@@ -191,7 +191,7 @@
                   
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
-                   th:field="*{itemName}" placeholder="Item name / सामान की  नाम">
+                   th:field="*{sellerEmail}" placeholder="Seller Email">
                   </div>
                   </div>
                   
@@ -204,7 +204,7 @@
                   
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
-                   th:field="*{itemName}" placeholder="Item name / सामान की  नाम">
+                   th:field="*{sellerMob}" placeholder="Seller Mob">
                   </div>
                   </div>
                   
@@ -216,6 +216,13 @@
                      th:field="*{itemQty}"
                       placeholder="Item Quantity (Kg/lt) / सामान की मात्रा">
                   </div>
+                  
+                   <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" 
+                    class="form-control form-control-user" 
+                     th:field="*{active}"
+                      placeholder="Active/Disble">
+                  </div>
                   </div>
                   
                   
@@ -223,6 +230,9 @@
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" th:field="*{itemSeason}" class="form-control form-control-user" placeholder="Item Season / सामान की  मौसम">
                   </div>
+                  
+                  
+                  
                   </div>
                   
                     <div class="form-group row">
