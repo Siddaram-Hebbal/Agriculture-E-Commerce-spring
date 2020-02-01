@@ -42,6 +42,14 @@ public class SellerController {
 		this.adminServiceImplementation=adminServiceImplementation;
 	}
 	
+	@GetMapping("/index")
+	public String aa(Model model){
+
+		
+		
+		return "seller/index";
+	}
+	
 	
 	@GetMapping("/add-items")
 	public String index(Model model){
