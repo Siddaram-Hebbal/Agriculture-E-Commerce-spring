@@ -138,7 +138,7 @@ public class SellerController {
 		Item admin=itemServiceImplementation.findById(theId);
 		System.out.println(admin);
 		
-		theModel.addAttribute("admin",admin);
+		theModel.addAttribute("item",admin);
 		
 		return "seller/updateItems";
 	}
