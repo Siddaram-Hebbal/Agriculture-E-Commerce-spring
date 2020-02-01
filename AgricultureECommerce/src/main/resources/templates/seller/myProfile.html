@@ -139,7 +139,7 @@
 
         </nav>
         <!-- End of Topbar -->
-
+<p id="demo"></p>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -177,9 +177,6 @@
 	
 	<input type="hidden" th:field="*{confirmationToken}" />
 	
-		<input type="hidden" th:field="*{latt}" />
-	
-	<input type="hidden" th:field="*{longi}" />
 	
   
                 <div class="form-group row">
@@ -236,7 +233,7 @@
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
                      th:field="*{latt}"
-                      placeholder="Lattitude" readonly>
+                      placeholder="Lattitude" id="latt" readonly>
                   </div>
                   
                   
@@ -244,7 +241,7 @@
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
                      th:field="*{longi}"
-                      placeholder="Longitude" readonly>
+                      placeholder="Longitude" id="longi" readonly>
                   </div>
                   </div>
                   
@@ -323,6 +320,40 @@
   <!-- Page level plugins -->
   <script src="../sellers/vendor/chart.js/Chart.min.js"></script>
 
+    <script>
+    
+function myFunction() {
+	  alert("Get-Saved wants to access your location : Click on Allow");
+  getLocation();
+}
+</script>
+<script>
+var x = document.getElementById("demo");
+var y,z;
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } 
+  
+  else 
+  { 
+  
+	  x.innerHTML = "Geolocation is not supported by this browser.";
+
+  }
+
+}
+
+function showPosition(position) {
+	
+  y=position.coords.latitude;
+  z=position.coords.longitude;
+  document.getElementById("latt").value =y;
+  document.getElementById("longi").value =z;
+  document.getElementById("ad").value =z+" "+y;
+
+}
+</script>
   <!-- Page level custom scripts -->
   <script src="../sellers/js/demo/chart-area-demo.js"></script>
   <script src="../sellers/js/demo/chart-pie-demo.js"></script>
