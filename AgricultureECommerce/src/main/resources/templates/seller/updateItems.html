@@ -167,20 +167,21 @@
   						sellerMob	
   						views	
   						active -->
-  	<input type="hidden"  th:field="*{click}" th:value="*{click}"  class="form-control" required="" >
-  	<input type="hidden"  th:field="*{click}" th:value="*{click}"  class="form-control" required="" >
-  	<input type="hidden"  th:field="*{click}" th:value="*{click}"  class="form-control" required="" >
-  	<input type="hidden"  th:field="*{click}" th:value="*{click}"  class="form-control" required="" >
+  	<input type="hidden"  th:field="*{id}" th:value="*{id}"  class="form-control" required="" >
+  	<input type="hidden"  th:field="*{sellerID}" th:value="*{sellerID}"  class="form-control" required="" >
+  	<input type="hidden"  th:field="*{sellerLatt}" th:value="*{sellerLatt}"  class="form-control" required="" >
+  	<input type="hidden"  th:field="*{sellerLongi}" th:value="*{sellerLongi}"  class="form-control" required="" >
+  	<input type="hidden"  th:field="*{sellerLongi}" th:value="*{sellerLongi}"  class="form-control" required="" >
   
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
-                   th:field="*{itemName}" placeholder="Item name / सामान की  नाम">
+                   th:field="*{itemName}"  th:value="*{sellerLongi}" placeholder="Item name / सामान की  नाम">
                   </div>
                   
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
-                   th:field="*{sellerName}" placeholder="Seller name ">
+                   th:field="*{sellerName}"  th:value="*{sellerLongi}" placeholder="Seller name ">
                   </div>
                   </div>
                   
@@ -190,12 +191,12 @@
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"  
                      th:field="*{itemPrice}"
-                    placeholder="Item Price / सामान की क़ीमत">
+                    placeholder="Item Price / सामान की क़ीमत"  th:value="*{sellerLongi}">
                   </div>
                   
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
-                   th:field="*{sellerEmail}" placeholder="Seller Email">
+                   th:field="*{sellerEmail}" th:value="*{sellerLongi}" placeholder="Seller Email">
                   </div>
                   </div>
                   
@@ -203,12 +204,12 @@
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user" 
                    th:field="*{itemType}"
-                     placeholder=" Item Type / सामान की परक">
+                     placeholder=" Item Type / सामान की परक"  th:value="*{sellerLongi}">
                   </div>
                   
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
-                   th:field="*{sellerMob}" placeholder="Seller Mob">
+                   th:field="*{sellerMob}" placeholder="Seller Mob"  th:value="*{sellerLongi}">
                   </div>
                   </div>
                   
@@ -218,23 +219,25 @@
                     <input type="number" 
                     class="form-control form-control-user" 
                      th:field="*{itemQty}"
-                      placeholder="Item Quantity (Kg/lt) / सामान की मात्रा">
+                      placeholder="Item Quantity (Kg/lt) / सामान की मात्रा"  th:value="*{sellerLongi}">
                   </div>
                   
                    <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" 
                     class="form-control form-control-user" 
                      th:field="*{active}"
-                      placeholder="Active/Disble">
+                      placeholder="Active/Disble"  th:value="*{sellerLongi}">
                   </div>
                   </div>
                   
                   
                     <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" th:field="*{itemSeason}" class="form-control form-control-user" placeholder="Item Season / सामान की  मौसम">
+                    <input type="text" th:field="*{itemSeason}"  th:value="*{sellerLongi}" class="form-control form-control-user" placeholder="Item Season / सामान की  मौसम">
                   </div>
-                  
+                      <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" th:field="*{views}"  th:value="*{sellerLongi}" class="form-control form-control-user" readonly>
+                  </div>
                   
                   
                   </div>
@@ -243,7 +246,7 @@
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
                      th:field="*{itemIMG}"
-                      placeholder="Item Image  / सामान की  छवि">
+                     th:value="*{sellerLongi}"  placeholder="Item Image  / सामान की  छवि">
                   </div>
                   
                   </div>
@@ -251,7 +254,7 @@
                     <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <textarea type="t    ext"
-                     th:field="*{desc}"
+                     th:field="*{desc}"  th:value="*{desc}"
                       class="form-control form-control-user" 
                        placeholder="Item Descriptions / सामान कीकुल विवरण"></textarea></div>
                   </div>
