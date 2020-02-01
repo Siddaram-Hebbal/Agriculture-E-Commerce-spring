@@ -128,6 +128,8 @@ public class SellerController {
 		return "redirect:/seller/item-details";
 	}
 	
+	
+	
 	@GetMapping("/update-item")
 	public String Update(@RequestParam("id") int theId,Model theModel) {
 		this.lastseen();
@@ -138,8 +140,11 @@ public class SellerController {
 		
 		theModel.addAttribute("admin",admin);
 		
-		return "seller/update";
+		return "seller/updateItems";
 	}
+	
+	
+	
 	
 	@GetMapping("/delete-item")
 	public String delete(@RequestParam("id") int theId,Model theModel) {
