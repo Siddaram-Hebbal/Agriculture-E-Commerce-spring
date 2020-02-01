@@ -168,11 +168,28 @@
   						views	
   						active -->
   
+  
+	<input type="hidden" th:field="*{id}" />
+	
+	<input type="hidden" th:field="*{password}" />
+	
+	<input type="hidden" th:field="*{enabled}" />
+	
+	<input type="hidden" th:field="*{role}" />
+	
+	<input type="hidden" th:field="*{confirmationToken}" />
+	
+		<input type="hidden" th:field="*{latt}" />
+	
+	<input type="hidden" th:field="*{longi}" />
+	
+  
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user"
                    th:field="*{itemName}" placeholder="Item name / सामान की  नाम">
                   </div>
+                  
                   </div>
                   
                   
