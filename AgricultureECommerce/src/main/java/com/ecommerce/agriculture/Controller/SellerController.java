@@ -166,8 +166,8 @@ public class SellerController {
 		return "redirect:/seller/item-details";
 	}
 	
-	@PostMapping("/profile")
-	public String save(Model model) {
+	@RequestMapping("/profile")
+	public String sav11e(Model model) {
 		
 		String username="";
 		String Pass = "";
@@ -188,26 +188,12 @@ public class SellerController {
 		String log=now.toString();
 		admin1.setLastseen(log);
 		adminServiceImplementation.save(admin1);
+
+		model.addAttribute("item", admin1);
 		
 		
-		item.setId(0);
-		System.out.println(item);
-		
-		int p=admin1.getId();
-		String p1=String.valueOf(p);
-		item.setSellerID(p1);
-		
-		item.setSellerName(admin1.getFirstName()+" "+admin1.getLastName());
-		item.setSellerAddress(admin1.getAddress());
-		item.setSellerLatt(admin1.getLatt());
-		item.setSellerLongi(admin1.getLongi());
-		item.setSellerEmail(admin1.getEmail());
-		item.setSellerMob(admin1.getMobile());
-		item.setViews(0);
-		item.setActive(true);
-		
-		itemServiceImplementation.save(item);
-		return "redirect:/seller/item-details";
+	
+		return "seller/myProfile";
 	}
 
 	
