@@ -16,5 +16,7 @@ import com.ecommerce.agriculture.entity.Order;
 public interface OrderRepository extends JpaRepository<Order, Integer> {
 
 	Order findByOrderid(int user);
+
+	void deleteByOrderid(int theId);
 	
 }
