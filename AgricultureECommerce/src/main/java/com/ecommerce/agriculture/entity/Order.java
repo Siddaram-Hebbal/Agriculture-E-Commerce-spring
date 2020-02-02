@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orderr")
 public class Order {
 	
 	
@@ -27,10 +27,10 @@ public class Order {
 	private String orderqty;
 	
 	@Column(name = "sellerid")
-	private String sellerid;
+	private int sellerid;
 	
 	@Column(name = "userid")
-	private String userid;
+	private int userid;
 	
 	@Column(name = "userAddress")
 	private String userAddress;
@@ -73,19 +73,19 @@ public class Order {
 		this.orderqty = orderqty;
 	}
 
-	public String getSellerid() {
+	public int getSellerid() {
 		return sellerid;
 	}
 
-	public void setSellerid(String sellerid) {
+	public void setSellerid(int sellerid) {
 		this.sellerid = sellerid;
 	}
 
-	public String getUserid() {
+	public int getUserid() {
 		return userid;
 	}
 
-	public void setUserid(String userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
 
