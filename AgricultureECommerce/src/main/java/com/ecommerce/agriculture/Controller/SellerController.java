@@ -205,8 +205,46 @@ public class SellerController {
 		model.addAttribute("order", list);
 		
 		
-		return "seller/items";
+		return "seller/orders";
 	}
+	
+	
+	//--------------------- Update Order ------------------------
+	
+	@GetMapping("/update-order")
+	public String UpdateOrders(@RequestParam("id") int theId,Model theModel) {
+		this.lastseen();
+		System.out.println(theId);
+		
+		Order admin=orderServiceImplementation.findByOrderid(theId);
+		System.out.println(admin);
+		
+		theModel.addAttribute("order",admin);
+		
+		return "seller/updateOrders";
+	}
+	@PostMapping("/update-orders")
+	public String updateOrder(@ModelAttribute("order") Order admin) {
+		
+		this.lastseen();
+		System.out.println(admin);
+		
+		orderServiceImplementation.save(admin);
+		
+		return "redirect:/seller/order-details";
+	}
+	
+	//------------------------- Delete Order -------------------------
+	
+		@GetMapping("/delete-order")
+		public String deleteP(@RequestParam("id") int theId,Model theModel) {
+			this.lastseen();
+			System.out.println(theId);
+			
+			orderServiceImplementation.deleteByOrderid(theId);
+		
+			return "redirect:/seller/order-details";
+		}
 	
 	public Admin lastseen()
 	{
