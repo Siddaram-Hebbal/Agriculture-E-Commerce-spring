@@ -46,5 +46,40 @@ public class UserController {
 		this.orderServiceImplementation=orderServiceImplementation;
 	}
 	
-
+	@RequestMapping("/item")
+	public String itemDetails(Model model){
+		
+		Admin p=this.lastseen();
+		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());        
+		List<Item> list=itemServiceImplementation.findAll();
+		model.addAttribute("user", list);
+		
+		
+		return "seller/items";
+	}
+	public Admin lastseen()
+	{
+		String username="";
+		String Pass = "";
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+		   username = ((UserDetails)principal).getUsername();
+		   Pass = ((UserDetails)principal).getPassword();
+		  System.out.println("One + "+username+"   "+Pass);
+		  	} else {
+		 username = principal.toString();
+		  System.out.println("Two + "+username);
+		}
+		System.out.println("One + "+username+"   "+Pass);
+		Admin admin1 = adminServiceImplementation.findByUser(username);
+		System.out.println(admin1);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		Date now = new Date();  
+		String log=now.toString();
+		admin1.setLastseen(log);
+		adminServiceImplementation.save(admin1);
+		
+		return admin1;
+		
+	}
 	}
