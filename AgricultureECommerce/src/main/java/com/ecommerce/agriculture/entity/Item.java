@@ -6,8 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Transient;
 
@@ -73,6 +71,7 @@ public class Item {
 	private String sellerMob;
 	
 	@Column(name = "views")
+	@Transient
 	private int views;
 	
 	
