@@ -164,7 +164,8 @@
                       
                        <th>Buyer Name</th>
                     <th>Date</th>
-                      
+                      <th>Update</th>
+                    <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -184,9 +185,9 @@
        	<tr th:each="temp : ${order}">
        	
   		<td  th:text="${temp.id}" />	
-				<td   th:text="${temp.itemName}" />	
-				 <td th:text="${temp.itemPrice}"/>
-				<td   th:text="${temp.itemType}" />	
+				<td   th:text="${temp.itemname}" />	
+				 <td th:text="${temp.orderprice}"/>
+				<td   th:text="${temp.orderqty}" />	
 					<td  th:text="${temp.itemSeason}" />	
 					
 			<td > <a th:href="@{/seller/update-item(id=${temp.id})}" class="btn btn-success">Update</a></td>
