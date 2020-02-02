@@ -126,12 +126,12 @@ public class OrderController {
 
 	//------------------------- Update Item -------------------------
 	
-	@GetMapping("/update-item")
+	@GetMapping("/update-order")
 	public String Update(@RequestParam("id") int theId,Model theModel) {
 		this.lastseen();
 		System.out.println(theId);
 		
-		Item admin=itemServiceImplementation.findById(theId);
+		Order admin=orderServiceImplementation.findByOrderid(theId);
 		System.out.println(admin);
 		
 		theModel.addAttribute("item",admin);
