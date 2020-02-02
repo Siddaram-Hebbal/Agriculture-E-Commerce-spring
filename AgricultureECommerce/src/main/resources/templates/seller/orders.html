@@ -159,30 +159,29 @@
                      
                       <th>Name</th>
                       <th>Price</th>
-                      <th>Type</th>
-                         <th>Season</th>
+                      <th>Qty</th>
+                         <th>Buyer Address</th>
                       
-                       <th>Update</th>
-                    <th>Remove</th>
+                       <th>Buyer Name</th>
+                    <th>Date</th>
                       
                     </tr>
                   </thead>
                   <tfoot>
                     <tr> 		
-                    	 	<th>Id</th>
+                    		<th>Id</th>
                      
                       <th>Name</th>
                       <th>Price</th>
-                      <th>Type</th>
-                         <th>Season</th>
+                      <th>Qty</th>
+                         <th>Buyer Address</th>
                       
-                       <th>Update</th>
-                    <th>Remove</th>
-                      
+                       <th>Buyer Name</th>
+                    <th>Date</th>
                     </tr>
                     </tfoot>
                   <tbody>
-       	<tr th:each="temp : ${user}">
+       	<tr th:each="temp : ${order}">
        	
   		<td  th:text="${temp.id}" />	
 				<td   th:text="${temp.itemName}" />	
