@@ -12,7 +12,7 @@ import com.ecommerce.agriculture.entity.Item;
  *
  */
 @Repository("orderRepository")
-public interface OderRepository extends JpaRepository<Item, Integer> {
+public interface OrderRepository extends JpaRepository<Item, Integer> {
 
 	Item findByOrderid(int user);
 	
