@@ -2,7 +2,6 @@ package com.ecommerce.agriculture.service;
 
 import java.util.List;
 
-import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.entity.Order;
 /**
  * 
@@ -17,7 +16,7 @@ public interface OrderService {
 	
 	public List<Order> findAll();
 
-	public void save(Admin admin);
+	public void save(Order admin);
 
-	public void deleteById(int theId);
+	public void deleteByOrderid(int theId);
 }
