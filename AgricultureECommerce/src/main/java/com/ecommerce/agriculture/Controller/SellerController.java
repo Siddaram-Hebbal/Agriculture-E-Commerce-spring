@@ -127,17 +127,16 @@ public class SellerController {
 	
 	
 	
-	@PostMapping("/update")
-	public String updateP(@ModelAttribute("item") Item admin) {
+	@PostMapping("/update-profile")
+	public String updateProf(@ModelAttribute("profile") Admin admin) {
 		
 		this.lastseen();
 		System.out.println(admin);
 		
-		itemServiceImplementation.save(admin);
+		adminServiceImplementation.save(admin);
 		
-		return "redirect:/seller/item-details";
+		return "redirect:/seller/profile";
 	}
-	
 	
 	
 	@GetMapping("/update-item")
