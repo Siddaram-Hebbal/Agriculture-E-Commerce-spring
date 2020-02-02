@@ -227,6 +227,57 @@ public class AdminController {
 	
 	//--------------------------------------------------------------
 	
+	
+		@RequestMapping("/seller-details")
+		public String sellerDetails(Model model){
+			
+			
+			this.lastseen();
+				         
+			List<Admin> list=adminServiceImplementation.findByRole("ROLE_SELLER");
+			model.addAttribute("user", list);
+			
+			
+			return "admin/seller";
+		}
+		
+		@PostMapping("/update-seller")
+		public String update1(@ModelAttribute("admin") Admin admin) {
+			
+			this.lastseen();
+			System.out.println(admin);
+			
+			adminServiceImplementation.save(admin);
+			
+			return "redirect:/admin/seller-details";
+		}
+		
+		@GetMapping("/update-seller")
+		public String UpdateAr1ea(@RequestParam("id") int theId,Model theModel) {
+			this.lastseen();
+			System.out.println(theId);
+			
+			Admin admin=adminServiceImplementation.findById(theId);
+			System.out.println(admin);
+			
+			theModel.addAttribute("admin",admin);
+			
+			return "admin/editSeller";
+		}
+		
+		@GetMapping("/delete-seller")
+		public String delete(@RequestParam("id") int theId,Model theModel) {
+			this.lastseen();
+			System.out.println(theId);
+			
+			adminServiceImplementation.deleteById(theId);
+		
+			return "redirect:/admin/add-admin";
+		}
+	
+	
+	//--------------------------------------------------------------
+	
 	@RequestMapping("/item-details")
 	public String itemDetails(Model model){
 		
