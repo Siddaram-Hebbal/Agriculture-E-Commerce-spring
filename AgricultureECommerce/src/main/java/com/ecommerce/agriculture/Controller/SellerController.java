@@ -166,6 +166,8 @@ public class SellerController {
 		return "redirect:/seller/item-details";
 	}
 	
+	
+	
 	@RequestMapping("/profile")
 	public String sav11e(Model model) {
 		
@@ -189,7 +191,7 @@ public class SellerController {
 		admin1.setLastseen(log);
 		adminServiceImplementation.save(admin1);
 
-		model.addAttribute("item", admin1);
+		model.addAttribute("profile", admin1);
 		
 		
 	
@@ -198,6 +200,17 @@ public class SellerController {
 
 	
 	
+			
+		@PostMapping("/update")
+		public String update(@ModelAttribute("admin") Admin admin) {
+			
+			this.lastseen();
+			System.out.println(admin);
+			
+			adminServiceImplementation.save(admin);
+			
+			return "redirect:/admin/admin-details";
+		}
 	public String lastseen()
 	{
 		String username="";
