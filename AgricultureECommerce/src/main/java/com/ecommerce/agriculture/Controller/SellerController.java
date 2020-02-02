@@ -142,7 +142,7 @@ public class SellerController {
 		
 		return "seller/updateItems";
 	}
-	@PostMapping("/update")
+	@PostMapping("/update-items")
 	public String updateP(@ModelAttribute("item") Item admin) {
 		
 		this.lastseen();
