@@ -22,7 +22,7 @@ public class OrderServiceImplementation implements OrderService {
 	@Autowired   
 	public OrderServiceImplementation( OrderRepository obj)
 	{
-		orderRepository=obj;
+		this.orderRepository=obj;
 	}
 	
 	@Override
