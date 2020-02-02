@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ecommerce.agriculture.entity.Item;
-import com.ecommerce.agriculture.repository.ItemRepository;
+import com.ecommerce.agriculture.entity.Order;
+import com.ecommerce.agriculture.repository.OrderRepository;
 
 /**
  * 
@@ -15,37 +15,37 @@ import com.ecommerce.agriculture.repository.ItemRepository;
  *
  */
 @Service
-public class OrderServiceImplementation implements ItemService {
+public class OrderServiceImplementation implements OrderService {
 
-	private ItemRepository itemRepository;
+	private OrderRepository orderRepository;
 
 	@Autowired   
-	public OrderServiceImplementation( ItemRepository obj)
+	public OrderServiceImplementation( OrderRepository obj)
 	{
-		itemRepository=obj;
+		orderRepository=obj;
 	}
 	
 	@Override
-	public List<Item> findAll() {
-		return itemRepository.findAll();
+	public List<Order> findAll() {
+		return orderRepository.findAll();
 	}
 
 	@Override
-	public void save(Item admin)
+	public void save(Order admin)
 	{
 		
-		itemRepository.save(admin);
+		orderRepository.save(admin);
 	}
 	@Override
 	public void deleteById(int theId) {
 		
-		 itemRepository.deleteById(theId);
+		 orderRepository.deleteById(theId);
 	}
 
 	@Override
-	public Item findById(int id) {
+	public Order findById(int id) {
 		
-		return itemRepository.findById(id);
+		return orderRepository.findById(id);
 	}
 
 	
