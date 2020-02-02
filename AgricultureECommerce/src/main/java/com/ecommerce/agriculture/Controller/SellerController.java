@@ -128,7 +128,7 @@ public class SellerController {
 	
 	
 
-	
+	//------------------------- Update Item -------------------------
 	
 	@GetMapping("/update-item")
 	public String Update(@RequestParam("id") int theId,Model theModel) {
@@ -144,7 +144,7 @@ public class SellerController {
 	}
 	
 	
-	
+	//------------------------- Delete Item -------------------------
 	
 	@GetMapping("/delete-item")
 	public String delete(@RequestParam("id") int theId,Model theModel) {
@@ -199,6 +199,8 @@ public class SellerController {
 		return "seller/myProfile";
 	}
 
+	
+	//------------------------- Update My Profile-------------------------
 	
 	public String lastseen()
 	{
