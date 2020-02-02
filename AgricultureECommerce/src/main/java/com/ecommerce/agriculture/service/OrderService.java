@@ -16,6 +16,10 @@ public interface OrderService {
 	public List<Order> findAll();
 
 	public void save(Order o);
+	
+	List<Order> findBySellerid(int user);
+
+	List<Order> findByUserid(int user);
 
 	public void deleteByOrderid(int theId);
 }
