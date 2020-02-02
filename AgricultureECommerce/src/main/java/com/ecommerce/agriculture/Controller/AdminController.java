@@ -238,7 +238,7 @@ public class AdminController {
 			model.addAttribute("user", list);
 			
 			
-			return "admin/seller";
+			return "admin/user";
 		}
 		
 		@PostMapping("/update-user")
@@ -249,7 +249,7 @@ public class AdminController {
 			
 			adminServiceImplementation.save(admin);
 			
-			return "redirect:/admin/seller-details";
+			return "redirect:/admin/user-details";
 		}
 		
 		@GetMapping("/update-user")
@@ -262,7 +262,7 @@ public class AdminController {
 			
 			theModel.addAttribute("admin",admin);
 			
-			return "admin/editSeller";
+			return "admin/editUser";
 		}
 		
 		@GetMapping("/delete-user")
