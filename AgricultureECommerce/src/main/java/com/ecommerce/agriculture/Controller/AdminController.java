@@ -228,21 +228,21 @@ public class AdminController {
 	//--------------------------------------------------------------
 	
 	
-		@RequestMapping("/seller-details")
-		public String sellerDetails(Model model){
+		@RequestMapping("/user-details")
+		public String userDetails(Model model){
 			
 			
 			this.lastseen();
 				         
-			List<Admin> list=adminServiceImplementation.findByRole("ROLE_SELLER");
+			List<Admin> list=adminServiceImplementation.findByRole("ROLE_USER");
 			model.addAttribute("user", list);
 			
 			
 			return "admin/seller";
 		}
 		
-		@PostMapping("/update-seller")
-		public String update1(@ModelAttribute("admin") Admin admin) {
+		@PostMapping("/update-user")
+		public String updateUser(@ModelAttribute("admin") Admin admin) {
 			
 			this.lastseen();
 			System.out.println(admin);
@@ -252,8 +252,8 @@ public class AdminController {
 			return "redirect:/admin/seller-details";
 		}
 		
-		@GetMapping("/update-seller")
-		public String UpdateAr1ea(@RequestParam("id") int theId,Model theModel) {
+		@GetMapping("/update-user")
+		public String updateUser(@RequestParam("id") int theId,Model theModel) {
 			this.lastseen();
 			System.out.println(theId);
 			
@@ -265,8 +265,8 @@ public class AdminController {
 			return "admin/editSeller";
 		}
 		
-		@GetMapping("/delete-seller")
-		public String delete(@RequestParam("id") int theId,Model theModel) {
+		@GetMapping("/delete-user")
+		public String deleteUser(@RequestParam("id") int theId,Model theModel) {
 			this.lastseen();
 			System.out.println(theId);
 			
