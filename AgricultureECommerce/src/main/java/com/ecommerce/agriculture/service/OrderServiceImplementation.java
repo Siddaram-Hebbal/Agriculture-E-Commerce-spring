@@ -50,5 +50,17 @@ public class OrderServiceImplementation implements OrderService {
 		 orderRepository.deleteByOrderid(theId);
 	}
 
+	@Override
+	public List<Order> findBySellerid(int user) {
+		
+		return orderRepository.findBySellerid(user);
+	}
+
+	@Override
+	public List<Order> findByUserid(int user) {
+	
+		return  orderRepository.findByUserid(user);
+	}
+
 	
 }
