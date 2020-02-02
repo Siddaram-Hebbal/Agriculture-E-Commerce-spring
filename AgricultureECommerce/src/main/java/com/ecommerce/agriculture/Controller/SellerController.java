@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.entity.Item;
+import com.ecommerce.agriculture.entity.Order;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
 import com.ecommerce.agriculture.service.ItemServiceImplementation;
+import com.ecommerce.agriculture.service.OrderServiceImplementation;
 
 /**
  * 
@@ -29,18 +31,20 @@ import com.ecommerce.agriculture.service.ItemServiceImplementation;
 @RequestMapping("/seller")
 public class SellerController {
 
-
 	private ItemServiceImplementation itemServiceImplementation;
 	private AdminServiceImplementation adminServiceImplementation;
-	
+	private OrderServiceImplementation orderServiceImplementation;
 	
 	@Autowired
 	public SellerController(ItemServiceImplementation objA,
-			AdminServiceImplementation adminServiceImplementation) {
+			AdminServiceImplementation adminServiceImplementation,
+			OrderServiceImplementation orderServiceImplementation) {
 	
 		this.itemServiceImplementation=objA;
 		this.adminServiceImplementation=adminServiceImplementation;
+		this.orderServiceImplementation=orderServiceImplementation;
 	}
+	
 	
 	@GetMapping("/index")
 	public String aa(Model model){
@@ -55,9 +59,8 @@ public class SellerController {
 	@GetMapping("/add-items")
 	public String index(Model model){
 
-		
-		String p=this.lastseen();
-		model.addAttribute("user",p);   
+		Admin p=this.lastseen();
+		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());   
 		Item item=new Item();
 		
 		model.addAttribute("item", item);
@@ -68,26 +71,7 @@ public class SellerController {
 	@PostMapping("/save")
 	public String save(@ModelAttribute("item") Item item) {
 		
-		String username="";
-		String Pass = "";
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-		   username = ((UserDetails)principal).getUsername();
-		   Pass = ((UserDetails)principal).getPassword();
-		  System.out.println("One + "+username+"   "+Pass);
-		  	} else {
-		 username = principal.toString();
-		  System.out.println("Two + "+username);
-		}
-		System.out.println("One + "+username+"   "+Pass);
-		Admin admin1 = adminServiceImplementation.findByUser(username);
-		System.out.println(admin1);
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-		Date now = new Date();  
-		String log=now.toString();
-		admin1.setLastseen(log);
-		adminServiceImplementation.save(admin1);
-		
+		Admin admin1=this.lastseen();
 		
 		item.setId(0);
 		System.out.println(item);
@@ -116,9 +100,8 @@ public class SellerController {
 	@RequestMapping("/item-details")
 	public String itemDetails(Model model){
 		
-		
-		String p=this.lastseen();
-		model.addAttribute("name",p);       
+		Admin p=this.lastseen();
+		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());        
 		List<Item> list=itemServiceImplementation.findAll();
 		model.addAttribute("user", list);
 		
@@ -215,16 +198,16 @@ public class SellerController {
 	public String orderDetails(Model model){
 		
 		
-		String p=this.lastseen();
-		model.addAttribute("name",p);       
-		List<Oder> list=itemServiceImplementation.findAll();
-		model.addAttribute("user", list);
+		Admin p=this.lastseen();
+		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());       
+		List<Order> list= orderServiceImplementation.findbySellerid();
+		model.addAttribute("order", list);
 		
 		
 		return "seller/items";
 	}
 	
-	public String lastseen()
+	public Admin lastseen()
 	{
 		String username="";
 		String Pass = "";
@@ -246,7 +229,7 @@ public class SellerController {
 		admin1.setLastseen(log);
 		adminServiceImplementation.save(admin1);
 		
-		return admin1.getFirstName()+" "+admin1.getLastName();
+		return admin1;
 		
 	}
 
