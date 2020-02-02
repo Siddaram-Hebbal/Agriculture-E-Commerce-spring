@@ -234,7 +234,7 @@ public class AdminController {
 		model.addAttribute("user", list);
 		
 		
-		return "seller/item";
+		return "admin/item";
 	}
 
 	
