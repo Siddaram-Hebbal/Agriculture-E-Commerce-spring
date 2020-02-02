@@ -15,7 +15,7 @@ public interface OrderService {
 	
 	public List<Order> findAll();
 
-	public void save(Order admin);
+	public void save(Order o);
 
 	public void deleteByOrderid(int theId);
 }
