@@ -45,7 +45,185 @@ public class OrderController {
 		this.orderServiceImplementation=orderServiceImplementation;
 	}
 	
+
+	//------------------------- SAVE ITEM -------------------------
 	
+	@GetMapping("/add-items")
+	public String index(Model model){
+
+		
+		String p=this.lastseen();
+		model.addAttribute("user",p);   
+		Item item=new Item();
+		
+		model.addAttribute("item", item);
+		
+		return "seller/addItems";
+	}
+	
+	@PostMapping("/save")
+	public String save(@ModelAttribute("item") Item item) {
+		
+		String username="";
+		String Pass = "";
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+		   username = ((UserDetails)principal).getUsername();
+		   Pass = ((UserDetails)principal).getPassword();
+		  System.out.println("One + "+username+"   "+Pass);
+		  	} else {
+		 username = principal.toString();
+		  System.out.println("Two + "+username);
+		}
+		System.out.println("One + "+username+"   "+Pass);
+		Admin admin1 = adminServiceImplementation.findByUser(username);
+		System.out.println(admin1);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		Date now = new Date();  
+		String log=now.toString();
+		admin1.setLastseen(log);
+		adminServiceImplementation.save(admin1);
+		
+		
+		item.setId(0);
+		System.out.println(item);
+		
+		int p=admin1.getId();
+		String p1=String.valueOf(p);
+		item.setSellerID(p1);
+		
+		item.setSellerName(admin1.getFirstName()+" "+admin1.getLastName());
+		item.setSellerAddress(admin1.getAddress());
+		item.setSellerLatt(admin1.getLatt());
+		item.setSellerLongi(admin1.getLongi());
+		item.setSellerEmail(admin1.getEmail());
+		item.setSellerMob(admin1.getMobile());
+		item.setViews(0);
+		item.setActive(true);
+		
+		itemServiceImplementation.save(item);
+		return "redirect:/seller/item-details";
+	}
+
+	
+	
+	//------------------------- Item Details -------------------------
+	
+	@RequestMapping("/item-details")
+	public String itemDetails(Model model){
+		
+		
+		String p=this.lastseen();
+		model.addAttribute("name",p);       
+		List<Item> list=itemServiceImplementation.findAll();
+		model.addAttribute("user", list);
+		
+		
+		return "seller/items";
+	}
+	
+	
+
+	//------------------------- Update Item -------------------------
+	
+	@GetMapping("/update-item")
+	public String Update(@RequestParam("id") int theId,Model theModel) {
+		this.lastseen();
+		System.out.println(theId);
+		
+		Item admin=itemServiceImplementation.findById(theId);
+		System.out.println(admin);
+		
+		theModel.addAttribute("item",admin);
+		
+		return "seller/updateItems";
+	}
+	
+	
+	//------------------------- Delete Item -------------------------
+	
+	@GetMapping("/delete-item")
+	public String delete(@RequestParam("id") int theId,Model theModel) {
+		this.lastseen();
+		System.out.println(theId);
+		
+		itemServiceImplementation.deleteById(theId);
+	
+		return "redirect:/seller/item-details";
+	}
+	
+	//------------------------- Update My Profile-------------------------
+	
+	@PostMapping("/update-profile")
+	public String updateProf(@ModelAttribute("profile") Admin admin) {
+		
+		this.lastseen();
+		System.out.println(admin);
+		
+		adminServiceImplementation.save(admin);
+		
+		return "redirect:/seller/profile";
+	}
+	
+	@RequestMapping("/profile")
+	public String sav11e(Model model) {
+		
+		String username="";
+		String Pass = "";
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+		   username = ((UserDetails)principal).getUsername();
+		   Pass = ((UserDetails)principal).getPassword();
+		  System.out.println("One + "+username+"   "+Pass);
+		  	} else {
+		 username = principal.toString();
+		  System.out.println("Two + "+username);
+		}
+		System.out.println("One + "+username+"   "+Pass);
+		Admin admin1 = adminServiceImplementation.findByUser(username);
+		System.out.println(admin1);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		Date now = new Date();  
+		String log=now.toString();
+		admin1.setLastseen(log);
+		adminServiceImplementation.save(admin1);
+
+		model.addAttribute("profile", admin1);
+		
+		
+	
+		return "seller/myProfile";
+	}
+
+	
+	
+	
+	public String lastseen()
+	{
+		String username="";
+		String Pass = "";
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+		   username = ((UserDetails)principal).getUsername();
+		   Pass = ((UserDetails)principal).getPassword();
+		  System.out.println("One + "+username+"   "+Pass);
+		  	} else {
+		 username = principal.toString();
+		  System.out.println("Two + "+username);
+		}
+		System.out.println("One + "+username+"   "+Pass);
+		Admin admin1 = adminServiceImplementation.findByUser(username);
+		System.out.println(admin1);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		Date now = new Date();  
+		String log=now.toString();
+		admin1.setLastseen(log);
+		adminServiceImplementation.save(admin1);
+		
+		return admin1.getFirstName()+" "+admin1.getLastName();
+		
+	}
+
 											
 	
 }
