@@ -88,6 +88,22 @@ public class UserController {
 		
 		return "";
 	}
+	
+	
+	@RequestMapping("/my-orders")
+	public String orderDetails(Model model){
+		
+		
+		Admin p=this.lastseen();
+		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());   
+		String s=String.valueOf(p.getId());
+		List<Order> list= orderServiceImplementation.findByUserid(p.getId());
+		model.addAttribute("order", list);
+		
+		
+		return "";
+	}
+	
 	public Admin lastseen()
 	{
 		String username="";
