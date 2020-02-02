@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.agriculture.entity.Admin;
+import com.ecommerce.agriculture.entity.Item;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
+import com.ecommerce.agriculture.service.ItemServiceImplementation;
+import com.ecommerce.agriculture.service.OrderServiceImplementation;
 
 /**
  * 
@@ -28,11 +31,18 @@ import com.ecommerce.agriculture.service.AdminServiceImplementation;
 @RequestMapping("/admin")
 public class AdminController {
 	
+	private ItemServiceImplementation itemServiceImplementation;
 	private AdminServiceImplementation adminServiceImplementation;
+	private OrderServiceImplementation orderServiceImplementation;
 	
 	@Autowired
-	public AdminController(AdminServiceImplementation obj) {
-		this.adminServiceImplementation=obj;
+	public AdminController(ItemServiceImplementation objA,
+			AdminServiceImplementation adminServiceImplementation,
+			OrderServiceImplementation orderServiceImplementation) {
+	
+		this.itemServiceImplementation=objA;
+		this.adminServiceImplementation=adminServiceImplementation;
+		this.orderServiceImplementation=orderServiceImplementation;
 	}
 	
 	
@@ -214,7 +224,22 @@ public class AdminController {
 		return "redirect:/admin/add-admin";
 	}
 	
-	public void lastseen()
+	//--------------------------------------------------------------
+	
+	@RequestMapping("/item-details")
+	public String itemDetails(Model model){
+		
+		Admin p=this.lastseen();
+		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());        
+		List<Item> list=itemServiceImplementation.findAll();
+		model.addAttribute("user", list);
+		
+		
+		return "seller/items";
+	}
+
+	
+	public Admin lastseen()
 	{
 		String username="";
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -232,7 +257,7 @@ public class AdminController {
 		String log=now.toString();
 		admin1.setLastseen(log);
 		adminServiceImplementation.save(admin1);
-	
+		return admin1;
 	}
 
 
