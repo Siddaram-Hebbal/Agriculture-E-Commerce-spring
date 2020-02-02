@@ -19,6 +19,7 @@ import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.entity.Item;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
 import com.ecommerce.agriculture.service.ItemServiceImplementation;
+import com.ecommerce.agriculture.service.OrderServiceImplementation;
 
 /**
  * 
@@ -32,14 +33,16 @@ public class OrderController {
 
 	private ItemServiceImplementation itemServiceImplementation;
 	private AdminServiceImplementation adminServiceImplementation;
-	
+	private OrderServiceImplementation orderServiceImplementation;
 	
 	@Autowired
 	public OrderController(ItemServiceImplementation objA,
-			AdminServiceImplementation adminServiceImplementation) {
+			AdminServiceImplementation adminServiceImplementation,
+			OrderServiceImplementation orderServiceImplementation) {
 	
 		this.itemServiceImplementation=objA;
 		this.adminServiceImplementation=adminServiceImplementation;
+		this.orderServiceImplementation=orderServiceImplementation;
 	}
 	
 	@GetMapping("/index")
