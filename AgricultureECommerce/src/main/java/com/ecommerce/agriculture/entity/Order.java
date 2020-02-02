@@ -20,6 +20,9 @@ public class Order {
 	@Column(name = "itemid")
 	private String itemid;
 	
+	@Column(name = "itemname")
+	private String itemname;
+	
 	@Column(name = "orderprice")
 	private String orderprice;
 	
