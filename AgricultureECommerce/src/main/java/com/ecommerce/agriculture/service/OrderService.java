@@ -11,7 +11,6 @@ import com.ecommerce.agriculture.entity.Order;
  */
 public interface OrderService {
 
-
 	public Order findByOrderid(int id);
 	
 	public List<Order> findAll();
