@@ -201,6 +201,10 @@ public class SellerController {
 		Admin p=this.lastseen();
 		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());   
 		String s=String.valueOf(p.getId());
+		System.out.println(p.getId());
+		System.out.println(p.getId());
+		System.out.println(p.getId());
+		System.out.println(p.getId());
 		List<Order> list= orderServiceImplementation.findBySellerid(p.getId());
 		model.addAttribute("order", list);
 		
