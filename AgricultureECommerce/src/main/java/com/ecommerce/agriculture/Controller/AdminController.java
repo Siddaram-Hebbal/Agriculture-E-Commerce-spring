@@ -249,7 +249,7 @@ public class AdminController {
 			model.addAttribute("order", list);
 			
 			
-			return "admin/item";
+			return "admin/order";
 		}
 
 	
