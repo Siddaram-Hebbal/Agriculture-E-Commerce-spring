@@ -50,6 +50,7 @@ public class SellerController {
 		return "seller/index";
 	}
 	
+	//------------------------- SAVE ITEM -------------------------
 	
 	@GetMapping("/add-items")
 	public String index(Model model){
@@ -63,7 +64,6 @@ public class SellerController {
 		
 		return "seller/addItems";
 	}
-	
 	
 	@PostMapping("/save")
 	public String save(@ModelAttribute("item") Item item) {
@@ -111,6 +111,7 @@ public class SellerController {
 
 	
 	
+	//------------------------- Item Details -------------------------
 	
 	@RequestMapping("/item-details")
 	public String itemDetails(Model model){
@@ -126,17 +127,7 @@ public class SellerController {
 	}
 	
 	
-	
-	@PostMapping("/update-profile")
-	public String updateProf(@ModelAttribute("profile") Admin admin) {
-		
-		this.lastseen();
-		System.out.println(admin);
-		
-		adminServiceImplementation.save(admin);
-		
-		return "redirect:/seller/profile";
-	}
+
 	
 	
 	@GetMapping("/update-item")
@@ -165,7 +156,18 @@ public class SellerController {
 		return "redirect:/seller/item-details";
 	}
 	
+	//------------------------- Update My Profile-------------------------
 	
+	@PostMapping("/update-profile")
+	public String updateProf(@ModelAttribute("profile") Admin admin) {
+		
+		this.lastseen();
+		System.out.println(admin);
+		
+		adminServiceImplementation.save(admin);
+		
+		return "redirect:/seller/profile";
+	}
 	
 	@RequestMapping("/profile")
 	public String sav11e(Model model) {
@@ -198,18 +200,6 @@ public class SellerController {
 	}
 
 	
-	
-			
-		@PostMapping("/update")
-		public String update(@ModelAttribute("admin") Admin admin) {
-			
-			this.lastseen();
-			System.out.println(admin);
-			
-			adminServiceImplementation.save(admin);
-			
-			return "redirect:/admin/admin-details";
-		}
 	public String lastseen()
 	{
 		String username="";
@@ -235,5 +225,5 @@ public class SellerController {
 		return admin1.getFirstName()+" "+admin1.getLastName();
 		
 	}
-	
+
 }
