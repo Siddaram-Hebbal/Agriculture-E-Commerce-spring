@@ -58,6 +58,23 @@ public class UserController {
 		return "user";
 	}
 	
+	@RequestMapping("/find-item")
+	public String oneItem(@RequestParam("id") int theId,Model model){
+		
+		Admin p=this.lastseen();
+		
+		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());        
+		Item list=itemServiceImplementation.findById(theId);
+		int c=list.getViews();
+		c++;
+		list.setViews(c);
+		itemServiceImplementation.save(list);
+		
+		model.addAttribute("item", list);
+		
+		
+		return "user";
+	}
 	
 
 	@GetMapping("/add-orders")
