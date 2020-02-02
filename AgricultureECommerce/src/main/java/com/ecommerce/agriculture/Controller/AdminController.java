@@ -201,7 +201,7 @@ public class AdminController {
 		
 		theModel.addAttribute("admin",admin);
 		
-		return "admin/editAdmin";
+		return "admin/editSeller";
 	}
 	
 	@GetMapping("/delete-seller")
