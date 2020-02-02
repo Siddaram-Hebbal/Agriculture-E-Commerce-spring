@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.entity.Item;
+import com.ecommerce.agriculture.entity.Order;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
 import com.ecommerce.agriculture.service.ItemServiceImplementation;
 import com.ecommerce.agriculture.service.OrderServiceImplementation;
@@ -236,6 +237,20 @@ public class AdminController {
 		
 		return "admin/item";
 	}
+
+	
+	//--------------------------------------------------------------
+	
+		@RequestMapping("/order-details")
+		public String itemssaDetails(Model model){
+			
+			Admin p=this.lastseen();   
+			List<Order> list=orderServiceImplementation.findAll();
+			model.addAttribute("order", list);
+			
+			
+			return "admin/item";
+		}
 
 	
 	public Admin lastseen()
