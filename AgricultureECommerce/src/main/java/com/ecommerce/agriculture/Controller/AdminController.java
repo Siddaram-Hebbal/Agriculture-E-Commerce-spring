@@ -229,8 +229,7 @@ public class AdminController {
 	@RequestMapping("/item-details")
 	public String itemDetails(Model model){
 		
-		Admin p=this.lastseen();
-		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());        
+		Admin p=this.lastseen();   
 		List<Item> list=itemServiceImplementation.findAll();
 		model.addAttribute("user", list);
 		
