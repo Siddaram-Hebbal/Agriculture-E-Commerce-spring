@@ -155,7 +155,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/delete-admin")
-	public String delete(@RequestParam("id") int theId,Model theModel) {
+	public String delete_(@RequestParam("id") int theId,Model theModel) {
 		this.lastseen();
 		System.out.println(theId);
 		
@@ -164,6 +164,55 @@ public class AdminController {
 		return "redirect:/admin/add-admin";
 	}
 	
+	//--------------------------------------------------------------
+	
+	
+	@RequestMapping("/seller-details")
+	public String sellerDetails(Model model){
+		
+		
+		this.lastseen();
+			         
+		List<Admin> list=adminServiceImplementation.findByRole("ROLE_SELLER");
+		model.addAttribute("user", list);
+		
+		
+		return "admin/admin";
+	}
+	
+	@PostMapping("/update-seller")
+	public String update1(@ModelAttribute("admin") Admin admin) {
+		
+		this.lastseen();
+		System.out.println(admin);
+		
+		adminServiceImplementation.save(admin);
+		
+		return "redirect:/admin/admin-details";
+	}
+	
+	@GetMapping("/update-seller")
+	public String UpdateAr1ea(@RequestParam("id") int theId,Model theModel) {
+		this.lastseen();
+		System.out.println(theId);
+		
+		Admin admin=adminServiceImplementation.findById(theId);
+		System.out.println(admin);
+		
+		theModel.addAttribute("admin",admin);
+		
+		return "admin/editAdmin";
+	}
+	
+	@GetMapping("/delete-seller")
+	public String delete(@RequestParam("id") int theId,Model theModel) {
+		this.lastseen();
+		System.out.println(theId);
+		
+		adminServiceImplementation.deleteById(theId);
+	
+		return "redirect:/admin/add-admin";
+	}
 	
 	public void lastseen()
 	{
