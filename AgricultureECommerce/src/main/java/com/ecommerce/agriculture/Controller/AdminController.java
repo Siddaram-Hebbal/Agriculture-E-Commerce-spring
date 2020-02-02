@@ -188,7 +188,7 @@ public class AdminController {
 		
 		adminServiceImplementation.save(admin);
 		
-		return "redirect:/admin/admin-details";
+		return "redirect:/admin/seller-details";
 	}
 	
 	@GetMapping("/update-seller")
