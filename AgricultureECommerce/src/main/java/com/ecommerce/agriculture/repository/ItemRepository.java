@@ -3,7 +3,6 @@ package com.ecommerce.agriculture.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.entity.Item;
 
 /**
