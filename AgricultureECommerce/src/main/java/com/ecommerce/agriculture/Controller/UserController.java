@@ -55,7 +55,38 @@ public class UserController {
 		model.addAttribute("user", list);
 		
 		
-		return "seller/items";
+		return "user";
+	}
+	
+	
+
+	@GetMapping("/add-orders")
+	public String index(Model model){
+
+		Admin p=this.lastseen();
+		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());   
+		Order order=new Order();
+		
+		model.addAttribute("order", order);
+		
+		return "user";
+	}
+	
+	@PostMapping("/save")
+	public String save(@ModelAttribute("order") Order order) {
+		
+		Admin admin1=this.lastseen();
+		
+		
+		System.out.println(order);
+		
+		int p=admin1.getId();
+		String p1=String.valueOf(p);
+		
+		orderServiceImplementation.save(order);
+		
+		
+		return "";
 	}
 	public Admin lastseen()
 	{
