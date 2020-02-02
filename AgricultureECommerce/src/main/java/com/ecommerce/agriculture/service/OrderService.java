@@ -15,11 +15,7 @@ public interface OrderService {
 
 	public Order findByOrderid(int id);
 	
-	public Admin findByEmail(String user);
-	
-	public Admin findByUser(String user);
-	
-	public List<Admin> findAll();
+	public List<Order> findAll();
 
 	public void save(Admin admin);
 
