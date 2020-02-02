@@ -164,18 +164,18 @@
                       
                     </tr>
                   <tbody>
-       	<tr th:each="temp : ${user}">
+     	<tr th:each="temp : ${user}">
        	
   		<td  th:text="${temp.id}" />	
-				<td   th:text="${temp.firstName}" />	
-				 <td th:text="${temp.lastName}"/>
-				<td   th:text="${temp.email}" />	
-					<td  th:text="${temp.gender}" />	
-				<td th:text="${temp.lastseen}" />		
-			<td > <a th:href="@{/admin/update-admin(id=${temp.id})}" class="btn btn-success">Update</a></td>
+				<td   th:text="${temp.itemName}" />	
+				 <td th:text="${temp.itemPrice}"/>
+				<td   th:text="${temp.itemType}" />	
+					<td  th:text="${temp.itemSeason}" />	
+					
+			<td > <a th:href="@{/seller/update-item(id=${temp.id})}" class="btn btn-success">Update</a></td>
 					
 					
-		<td ><a th:href="@{/admin/delete-admin(id=${temp.id})}" class="btn btn-danger">Remove</a></td>
+		<td ><a th:href="@{/seller/delete-item(id=${temp.id})}" class="btn btn-danger">Remove</a></td>
 		
 		</tr>
        
