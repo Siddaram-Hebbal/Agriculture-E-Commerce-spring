@@ -27,7 +27,7 @@ import com.ecommerce.agriculture.service.OrderServiceImplementation;
  *
  */
 @Controller
-@RequestMapping("/seller")
+@RequestMapping("/user")
 public class OrderController {
 
 
