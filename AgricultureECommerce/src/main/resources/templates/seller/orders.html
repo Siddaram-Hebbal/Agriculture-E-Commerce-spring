@@ -184,16 +184,17 @@
                   <tbody>
        	<tr th:each="temp : ${order}">
        	
-  		<td  th:text="${temp.id}" />	
+  		<td  th:text="${temp.orderid}" />	
 				<td   th:text="${temp.itemname}" />	
 				 <td th:text="${temp.orderprice}"/>
 				<td   th:text="${temp.orderqty}" />	
-					<td  th:text="${temp.itemSeason}" />	
+					<td  th:text="${temp.userAddress}" />	
+					<td  th:text="${temp.username}" />	
+						<td  th:text="${temp.placed}" />	
+			<td > <a th:href="@{/seller/update-order(id=${temp.orderid})}" class="btn btn-success">Update</a></td>
 					
-			<td > <a th:href="@{/seller/update-item(id=${temp.id})}" class="btn btn-success">Update</a></td>
 					
-					
-		<td ><a th:href="@{/seller/delete-item(id=${temp.id})}" class="btn btn-danger">Remove</a></td>
+		<td ><a th:href="@{/seller/delete-order(id=${temp.orderid})}" class="btn btn-danger">Remove</a></td>
 		
 		</tr>
        
