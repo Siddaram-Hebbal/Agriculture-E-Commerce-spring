@@ -27,7 +27,8 @@ public class LoginController {
 	{
 		
 		return "user/success";
-	}*/
+	}
+	*/
 
 
 }
