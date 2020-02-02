@@ -142,7 +142,16 @@ public class SellerController {
 		
 		return "seller/updateItems";
 	}
-	
+	@PostMapping("/update")
+	public String updateP(@ModelAttribute("item") Item admin) {
+		
+		this.lastseen();
+		System.out.println(admin);
+		
+		itemServiceImplementation.save(admin);
+		
+		return "redirect:/seller/item-details";
+	}
 	
 	//------------------------- Delete Item -------------------------
 	
@@ -200,7 +209,7 @@ public class SellerController {
 	}
 
 	
-	
+	//------------------------- Update My Profile-------------------------
 	
 	public String lastseen()
 	{
