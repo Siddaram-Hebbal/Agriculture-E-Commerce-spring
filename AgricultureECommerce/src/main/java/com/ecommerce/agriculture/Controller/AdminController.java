@@ -177,7 +177,7 @@ public class AdminController {
 		model.addAttribute("user", list);
 		
 		
-		return "admin/admin";
+		return "admin/seller";
 	}
 	
 	@PostMapping("/update-seller")
