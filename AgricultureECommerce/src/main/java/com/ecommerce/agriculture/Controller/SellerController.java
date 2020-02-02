@@ -200,7 +200,7 @@ public class SellerController {
 	}
 
 	
-	//------------------------- Update My Profile-------------------------
+	
 	
 	public String lastseen()
 	{
