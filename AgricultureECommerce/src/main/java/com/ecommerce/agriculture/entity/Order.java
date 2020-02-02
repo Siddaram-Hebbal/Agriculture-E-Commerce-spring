@@ -29,9 +29,32 @@ public class Order {
 	@Column(name = "sellerid")
 	private int sellerid;
 	
+	
+	@Column(name = "sellername")
+	private int sellername;
+	
 	@Column(name = "userid")
 	private int userid;
 	
+	@Column(name = "username")
+	private int username;
+	
+	public int getSellername() {
+		return sellername;
+	}
+
+	public void setSellername(int sellername) {
+		this.sellername = sellername;
+	}
+
+	public int getUsername() {
+		return username;
+	}
+
+	public void setUsername(int username) {
+		this.username = username;
+	}
+
 	@Column(name = "userAddress")
 	private String userAddress;
 	
