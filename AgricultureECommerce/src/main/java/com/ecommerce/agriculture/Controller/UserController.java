@@ -29,7 +29,7 @@ import com.ecommerce.agriculture.service.OrderServiceImplementation;
  */
 @Controller
 @RequestMapping("/user")
-public class OrderController {
+public class UserController {
 
 
 	private ItemServiceImplementation itemServiceImplementation;
@@ -37,7 +37,7 @@ public class OrderController {
 	private OrderServiceImplementation orderServiceImplementation;
 	
 	@Autowired
-	public OrderController(ItemServiceImplementation objA,
+	public UserController(ItemServiceImplementation objA,
 			AdminServiceImplementation adminServiceImplementation,
 			OrderServiceImplementation orderServiceImplementation) {
 	
