@@ -209,7 +209,20 @@ public class SellerController {
 	}
 
 	
-	//------------------------- Update My Profile-------------------------
+	//------------------------- Get All Orders-------------------------
+	
+	@RequestMapping("/order-details")
+	public String orderDetails(Model model){
+		
+		
+		String p=this.lastseen();
+		model.addAttribute("name",p);       
+		List<Oder> list=itemServiceImplementation.findAll();
+		model.addAttribute("user", list);
+		
+		
+		return "seller/items";
+	}
 	
 	public String lastseen()
 	{
