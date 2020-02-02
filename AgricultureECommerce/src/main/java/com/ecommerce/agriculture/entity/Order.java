@@ -1,22 +1,40 @@
 package com.ecommerce.agriculture.entity;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class Order {
 	
 	
-	orderid
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	private int orderid;
 	
-	itemid
+	@Column(name = "itemid")
+	private String itemid;
 	
-	orderprice
+	@Column(name = "orderprice")
+	private String orderprice;
 	
-	orderqty
+	@Column(name = "orderqty")
+	private String orderqty;
 	
-	sellerid
+	@Column(name = "sellerid")
+	private String sellerid;
 	
-	userid
+	@Column(name = "userid")
+	private String userid;
 	
-	userAddress
+	@Column(name = "userAddress")
+	private String userAddress;
 	
-	string track
+	@Column(name = "track")
+	private String track;
+	
+	@Column(name = "placed")
+	private String placed;
 	
 }
