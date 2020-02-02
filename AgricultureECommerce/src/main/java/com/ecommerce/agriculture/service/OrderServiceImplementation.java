@@ -27,6 +27,7 @@ public class OrderServiceImplementation implements OrderService {
 	
 	@Override
 	public List<Order> findAll() {
+		
 		return orderRepository.findAll();
 	}
 
@@ -36,16 +37,17 @@ public class OrderServiceImplementation implements OrderService {
 		
 		orderRepository.save(admin);
 	}
+
 	@Override
-	public void deleteById(int theId) {
+	public Order findByOrderid(int id) {
 		
-		 orderRepository.deleteById(theId);
+		return orderRepository.findByOrderid(id);
 	}
 
 	@Override
-	public Order findById(int id) {
+	public void deleteByOrderid(int theId) {
 		
-		return orderRepository.findById(id);
+		 orderRepository.deleteByOrderid(theId);
 	}
 
 	
