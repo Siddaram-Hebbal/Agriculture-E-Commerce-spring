@@ -12,9 +12,9 @@ import com.ecommerce.agriculture.entity.Item;
  * @github soumyadip007
  *
  */
-@Repository("itemRepository")
+@Repository("orderRepository")
 public interface OderRepository extends JpaRepository<Item, Integer> {
 
-	Item findById(int user);
+	Item findByOrderid(int user);
 	
 }
