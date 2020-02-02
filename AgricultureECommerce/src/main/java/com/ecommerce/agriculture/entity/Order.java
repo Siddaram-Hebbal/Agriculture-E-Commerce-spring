@@ -108,6 +108,13 @@ public class Order {
 	public void setPlaced(String placed) {
 		this.placed = placed;
 	}
+
+	@Override
+	public String toString() {
+		return "Order [orderid=" + orderid + ", itemid=" + itemid + ", orderprice=" + orderprice + ", orderqty="
+				+ orderqty + ", sellerid=" + sellerid + ", userid=" + userid + ", userAddress=" + userAddress
+				+ ", track=" + track + ", placed=" + placed + "]";
+	}
 	
 	
 	
