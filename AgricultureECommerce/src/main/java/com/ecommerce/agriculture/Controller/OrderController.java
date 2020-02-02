@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.agriculture.entity.Admin;
 import com.ecommerce.agriculture.entity.Item;
+import com.ecommerce.agriculture.entity.Order;
 import com.ecommerce.agriculture.service.AdminServiceImplementation;
 import com.ecommerce.agriculture.service.ItemServiceImplementation;
 import com.ecommerce.agriculture.service.OrderServiceImplementation;
@@ -48,15 +49,14 @@ public class OrderController {
 
 	//------------------------- SAVE ITEM -------------------------
 	
-	@GetMapping("/add-items")
+	@GetMapping("/add-orders")
 	public String index(Model model){
 
 		
-		String p=this.lastseen();
-		model.addAttribute("user",p);   
-		Item item=new Item();
+		this.lastseen();  
+		Order item=new Order();
 		
-		model.addAttribute("item", item);
+		model.addAttribute("order", item);
 		
 		return "seller/addItems";
 	}
