@@ -738,10 +738,10 @@ for (var attr in meta) {
   <div class="product-thumb">
     
     <a href="products/fresh-meal-kit-1.html" class="product-thumb-link rotate-thumb">
-      <img src="../user/s/files/1/2644/1682/products/fruit_03_1ff0c82d-946b-41aa-a0ad-50083ef2607e_grande4c9e.jpg?v=1513649300" alt="Fresh Meal Kit" >
+      <img th:src="${temp.itemType}"  alt="Fresh Meal Kit" >
       
       
-      <img src="../user/s/files/1/2644/1682/products/fruit_05_4474dc59-fc3b-47e7-a470-00eeed6ce665_grande4c9e.jpg?v=1513649300" alt="Fresh Meal Kit" >
+      <img th:src="${temp.itemType}" alt="Fresh Meal Kit" >
       
       
     
@@ -750,9 +750,9 @@ for (var attr in meta) {
   
   </div>
   <div class="product-info">
-    <h3 class="product-title"><a href="products/fresh-meal-kit-1.html">Fresh Meal Kit</a></h3>
+    <h3 class="product-title"><a href="products/fresh-meal-kit-1.html"><span th:text="${temp.itemType}" ></span></a></h3>
     <div class="product-price">
-    <ins class="color"><span><span class="money">$456.00</span></span></ins>
+    <ins class="color"><span><span class="money">₹456.00</span></span></ins>
       </div>
     <div class="product-rate">
       <div class="product-rating shopify-product-reviews-badge" data-id="590739341354"></div>
