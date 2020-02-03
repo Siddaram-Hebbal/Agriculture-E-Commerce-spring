@@ -737,7 +737,7 @@ for (var attr in meta) {
 <div  th:each="temp : ${user}" class="item-product item-product1 text-center">
   <div class="product-thumb">
     
-    <a href="products/fresh-meal-kit-1.html" class="product-thumb-link rotate-thumb">
+    <a href="#" class="product-thumb-link rotate-thumb">
       <img th:src="${temp.itemIMG}"  alt="Fresh Meal Kit" >
       
       
@@ -752,7 +752,7 @@ for (var attr in meta) {
   <div class="product-info">
     <h3 class="product-title"><a href="products/fresh-meal-kit-1.html"><span th:text="${temp.itemName}" ></span></a></h3>
     <div class="product-price">
-    <ins class="color"><span><span class="money" th:text="${temp.itemPrice}></span></span></ins>
+    <ins class="color"><span>₹<span class="money" th:text="${temp.itemPrice}"></span></span></ins>
       </div>
     <div class="product-rate">
       <div class="product-rating shopify-product-reviews-badge" data-id="590739341354"></div>
@@ -789,19 +789,14 @@ for (var attr in meta) {
                 
                 
 
-
-
-
-
-	
-
-<div class="item-product item-product1 text-center">
+<div  th:each="temp : ${user}" class="item-product item-product1 text-center">
   <div class="product-thumb">
     
-    <a href="products/fresh-meal-kit-1.html" class="product-thumb-link rotate-thumb">
-      <img src="../user/s/files/1/2644/1682/products/fruit_03_1ff0c82d-946b-41aa-a0ad-50083ef2607e_grande4c9e.jpg?v=1513649300" alt="Fresh Meal Kit" >
+    <a href="#" class="product-thumb-link rotate-thumb">
+      <img th:src="${temp.itemIMG}"  alt="Fresh Meal Kit" >
       
-           <img src="../user/s/files/1/2644/1682/products/fruit_05_4474dc59-fc3b-47e7-a470-00eeed6ce665_grande4c9e.jpg?v=1513649300" alt="Fresh Meal Kit" >
+      
+      <img th:src="${temp.itemIMG}" alt="Fresh Meal Kit" >
       
       
     
@@ -810,29 +805,16 @@ for (var attr in meta) {
   
   </div>
   <div class="product-info">
-    <h3 class="product-title"><a href="products/fresh-meal-kit-1.html">Fresh Meal Kit</a></h3>
+    <h3 class="product-title"><a href="products/fresh-meal-kit-1.html"><span th:text="${temp.itemName}" ></span></a></h3>
     <div class="product-price">
-
-       
-      
-      
-       <ins class="color"><span><span class="money">$456.00</span></span></ins>
-  
-      
-     
-    </div>
+    <ins class="color"><span>₹<span class="money" th:text="${temp.itemPrice}"></span></span></ins>
+      </div>
     <div class="product-rate">
       <div class="product-rating shopify-product-reviews-badge" data-id="590739341354"></div>
     </div>
     <div class="product-extra-link">
-      
-
-
-
-<a href="account/login.html" class="wishlist-link"><i class="fa fa-heart-o" aria-hidden="true"></i><span>wishlist</span></a>
-    
-      
-      <form method="post" action="https://fruit-demo.myshopify.com/cart/add">
+<a href="#" class="wishlist-link"><i class="fa fa-heart-o" aria-hidden="true"></i><span>wishlist</span></a>
+      <form method="post" action="#">
         <input type="hidden" name="id" value="7948557615146" />
         <button type="submit" name="add" class="addcart-link add-to-cart-button enj-add-to-cart-btn" title="Add to Cart">
           Add to Cart
@@ -844,6 +826,7 @@ for (var attr in meta) {
     </div>
   </div>
 </div>
+
 
         </div>
             </div>
@@ -859,46 +842,43 @@ for (var attr in meta) {
 
 
 
-	
-
-<div class="item-product item-product1 text-center">
+	<div  th:each="temp : ${user}" class="item-product item-product1 text-center">
   <div class="product-thumb">
     
-    <a href="products/copy-of-fresh-meal-kit.html" class="product-thumb-link rotate-thumb">
-      <img src="../user/s/files/1/2644/1682/products/fruit_02_eb1e2d21-aed7-475e-9621-a5941c2b191a_grandef3ee.jpg?v=1514257282" alt="Apetito Pure Fruit Juice" >
+    <a href="#" class="product-thumb-link rotate-thumb">
+      <img th:src="${temp.itemIMG}"  alt="Fresh Meal Kit" >
       
       
-      <img src="../user/s/files/1/2644/1682/products/fruit_02_eb1e2d21-aed7-475e-9621-a5941c2b191a_grandef3ee.jpg?v=1514257282" alt="Apetito Pure Fruit Juice" >
-        
+      <img th:src="${temp.itemIMG}" alt="Fresh Meal Kit" >
+      
+      
+    
+      
     </a>
+  
   </div>
   <div class="product-info">
-    <h3 class="product-title"><a href="products/copy-of-fresh-meal-kit.html">Apetito Pure Fruit Juice</a></h3>
+    <h3 class="product-title"><a href="products/fresh-meal-kit-1.html"><span th:text="${temp.itemName}" ></span></a></h3>
     <div class="product-price">
-      
-		<del class="silver"><span><span class="money">$489.00</span></span></del>
-        
-       <ins class="color"><span><span class="money">$199.00</span></span></ins>
-     
-    </div>
+    <ins class="color"><span>₹<span class="money" th:text="${temp.itemPrice}"></span></span></ins>
+      </div>
     <div class="product-rate">
-      <div class="product-rating shopify-product-reviews-badge" data-id="590668988458"></div>
+      <div class="product-rating shopify-product-reviews-badge" data-id="590739341354"></div>
     </div>
     <div class="product-extra-link">
-     
-<a href="account/login.html" class="wishlist-link"><i class="fa fa-heart-o" aria-hidden="true"></i><span>wishlist</span></a>
-
-      <form method="post" action="https://fruit-demo.myshopify.com/cart/add">
-        <input type="hidden" name="id" value="7947988172842" />
+<a href="#" class="wishlist-link"><i class="fa fa-heart-o" aria-hidden="true"></i><span>wishlist</span></a>
+      <form method="post" action="#">
+        <input type="hidden" name="id" value="7948557615146" />
         <button type="submit" name="add" class="addcart-link add-to-cart-button enj-add-to-cart-btn" title="Add to Cart">
           Add to Cart
         </button>
-      </form>   
-      <a href="javascript:void(0)"  data-id="copy-of-fresh-meal-kit" class="compare-link quick-view engoj-btn-quickview"><i class="fa fa-search" aria-hidden="true"></i><span>Quick view</span></a>
+      </form>
+      
+      
+      <a href="javascript:void(0)"  data-id="fresh-meal-kit-1" class="compare-link quick-view engoj-btn-quickview"><i class="fa fa-search" aria-hidden="true"></i><span>Quick view</span></a>
     </div>
   </div>
 </div>
-
 
                 
               </div>
@@ -909,45 +889,43 @@ for (var attr in meta) {
             <div class="product-slider line-white product-slider1">
               <div class="wrap-item" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1],[560,2],[768,3],[990,4]]">
                 
-      
-<div class="item-product item-product1 text-center">
+    <div  th:each="temp : ${user}" class="item-product item-product1 text-center">
   <div class="product-thumb">
     
-    <a href="products/copy-of-fresh-meal-kit.html" class="product-thumb-link rotate-thumb">
-      <img src="../user/s/files/1/2644/1682/products/fruit_02_eb1e2d21-aed7-475e-9621-a5941c2b191a_grandef3ee.jpg?v=1514257282" alt="Apetito Pure Fruit Juice" >
+    <a href="#" class="product-thumb-link rotate-thumb">
+      <img th:src="${temp.itemIMG}"  alt="Fresh Meal Kit" >
       
       
-      <img src="../user/s/files/1/2644/1682/products/fruit_02_eb1e2d21-aed7-475e-9621-a5941c2b191a_grandef3ee.jpg?v=1514257282" alt="Apetito Pure Fruit Juice" >
-        
+      <img th:src="${temp.itemIMG}" alt="Fresh Meal Kit" >
+      
+      
+    
+      
     </a>
+  
   </div>
   <div class="product-info">
-    <h3 class="product-title"><a href="products/copy-of-fresh-meal-kit.html">Apetito Pure Fruit Juice</a></h3>
+    <h3 class="product-title"><a href="products/fresh-meal-kit-1.html"><span th:text="${temp.itemName}" ></span></a></h3>
     <div class="product-price">
-      
-		<del class="silver"><span><span class="money">$489.00</span></span></del>
-        
-       <ins class="color"><span><span class="money">$199.00</span></span></ins>
-     
-    </div>
+    <ins class="color"><span>₹<span class="money" th:text="${temp.itemPrice}"></span></span></ins>
+      </div>
     <div class="product-rate">
-      <div class="product-rating shopify-product-reviews-badge" data-id="590668988458"></div>
+      <div class="product-rating shopify-product-reviews-badge" data-id="590739341354"></div>
     </div>
     <div class="product-extra-link">
-     
-<a href="account/login.html" class="wishlist-link"><i class="fa fa-heart-o" aria-hidden="true"></i><span>wishlist</span></a>
-
-      <form method="post" action="https://fruit-demo.myshopify.com/cart/add">
-        <input type="hidden" name="id" value="7947988172842" />
+<a href="#" class="wishlist-link"><i class="fa fa-heart-o" aria-hidden="true"></i><span>wishlist</span></a>
+      <form method="post" action="#">
+        <input type="hidden" name="id" value="7948557615146" />
         <button type="submit" name="add" class="addcart-link add-to-cart-button enj-add-to-cart-btn" title="Add to Cart">
           Add to Cart
         </button>
-      </form>   
-      <a href="javascript:void(0)"  data-id="copy-of-fresh-meal-kit" class="compare-link quick-view engoj-btn-quickview"><i class="fa fa-search" aria-hidden="true"></i><span>Quick view</span></a>
+      </form>
+      
+      
+      <a href="javascript:void(0)"  data-id="fresh-meal-kit-1" class="compare-link quick-view engoj-btn-quickview"><i class="fa fa-search" aria-hidden="true"></i><span>Quick view</span></a>
     </div>
   </div>
 </div>
-
 
                 
               </div>
@@ -957,46 +935,43 @@ for (var attr in meta) {
           <div id="fruit1516347690894" class="tab-pane ">
             <div class="product-slider line-white product-slider1">
               <div class="wrap-item" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1],[560,2],[768,3],[990,4]]">
-                
-                
-<div class="item-product item-product1 text-center">
+                <div  th:each="temp : ${user}" class="item-product item-product1 text-center">
   <div class="product-thumb">
     
-    <a href="products/copy-of-fresh-meal-kit.html" class="product-thumb-link rotate-thumb">
-      <img src="../user/s/files/1/2644/1682/products/fruit_02_eb1e2d21-aed7-475e-9621-a5941c2b191a_grandef3ee.jpg?v=1514257282" alt="Apetito Pure Fruit Juice" >
+    <a href="#" class="product-thumb-link rotate-thumb">
+      <img th:src="${temp.itemIMG}"  alt="Fresh Meal Kit" >
       
       
-      <img src="../user/s/files/1/2644/1682/products/fruit_02_eb1e2d21-aed7-475e-9621-a5941c2b191a_grandef3ee.jpg?v=1514257282" alt="Apetito Pure Fruit Juice" >
-        
+      <img th:src="${temp.itemIMG}" alt="Fresh Meal Kit" >
+      
+      
+    
+      
     </a>
+  
   </div>
   <div class="product-info">
-    <h3 class="product-title"><a href="products/copy-of-fresh-meal-kit.html">Apetito Pure Fruit Juice</a></h3>
+    <h3 class="product-title"><a href="products/fresh-meal-kit-1.html"><span th:text="${temp.itemName}" ></span></a></h3>
     <div class="product-price">
-      
-		<del class="silver"><span><span class="money">$489.00</span></span></del>
-        
-       <ins class="color"><span><span class="money">$199.00</span></span></ins>
-     
-    </div>
+    <ins class="color"><span>₹<span class="money" th:text="${temp.itemPrice}"></span></span></ins>
+      </div>
     <div class="product-rate">
-      <div class="product-rating shopify-product-reviews-badge" data-id="590668988458"></div>
+      <div class="product-rating shopify-product-reviews-badge" data-id="590739341354"></div>
     </div>
     <div class="product-extra-link">
-     
-<a href="account/login.html" class="wishlist-link"><i class="fa fa-heart-o" aria-hidden="true"></i><span>wishlist</span></a>
-
-      <form method="post" action="https://fruit-demo.myshopify.com/cart/add">
-        <input type="hidden" name="id" value="7947988172842" />
+<a href="#" class="wishlist-link"><i class="fa fa-heart-o" aria-hidden="true"></i><span>wishlist</span></a>
+      <form method="post" action="#">
+        <input type="hidden" name="id" value="7948557615146" />
         <button type="submit" name="add" class="addcart-link add-to-cart-button enj-add-to-cart-btn" title="Add to Cart">
           Add to Cart
         </button>
-      </form>   
-      <a href="javascript:void(0)"  data-id="copy-of-fresh-meal-kit" class="compare-link quick-view engoj-btn-quickview"><i class="fa fa-search" aria-hidden="true"></i><span>Quick view</span></a>
+      </form>
+      
+      
+      <a href="javascript:void(0)"  data-id="fresh-meal-kit-1" class="compare-link quick-view engoj-btn-quickview"><i class="fa fa-search" aria-hidden="true"></i><span>Quick view</span></a>
     </div>
   </div>
 </div>
-
 
 
 
@@ -1051,19 +1026,19 @@ for (var attr in meta) {
       </div>
     </div>
     <div class="col-md-7 col-sm-7 col-xs-12">
-      <div class="product-info">
-        <h3 class="product-title"><a href="products/dfsd.html">dfsd</a></h3>
+      <div class="product-info" th:each="temp : ${user}">
+        <h3 class="product-title"><a href=""><span th:text="${temp.itemName}" ></span></a></h3>
         <div class="product-price">
           
           
           
-          <ins class="color"><span><span class="money">$5.99</span></span></ins>
+          <ins class="color"><span><span class="money" th:text="${temp.itemPrice}" ></span></span></ins>
           
         </div>
         <div class="product-rate">
           <div class="product-rating shopify-product-reviews-badge" data-id="703337070634"></div>
         </div>
-        <p class="desc">Organic food consumption is rapidly increasing. The heightened interest in the global environment and a willingness to look</p>
+        <p class="desc" th:text="${temp.desc}" ></p>
         <div class="product-extra-link">
           
           
