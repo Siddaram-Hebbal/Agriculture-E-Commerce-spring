@@ -47,6 +47,20 @@ public class UserController {
 		this.orderServiceImplementation=orderServiceImplementation;
 	}
 	
+	
+	@RequestMapping("/index")
+	public String itemIndex(Model model){
+		
+		Admin p=this.lastseen();
+		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());        
+		List<Item> list=itemServiceImplementation.findAll();
+		model.addAttribute("user", list);
+		
+		
+		return "user";
+	}
+	
+	
 	@RequestMapping("/item")
 	public String itemDetails(Model model){
 		
