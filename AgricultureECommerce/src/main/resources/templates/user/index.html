@@ -750,9 +750,9 @@ for (var attr in meta) {
   
   </div>
   <div class="product-info">
-    <h3 class="product-title"><a href="products/fresh-meal-kit-1.html"><span th:text="${temp.itemType}" ></span></a></h3>
+    <h3 class="product-title"><a href="products/fresh-meal-kit-1.html"><span th:text="${temp.itemName}" ></span></a></h3>
     <div class="product-price">
-    <ins class="color"><span><span class="money">₹456.00</span></span></ins>
+    <ins class="color"><span><span class="money" th:text="${temp.itemPrice}></span></span></ins>
       </div>
     <div class="product-rate">
       <div class="product-rating shopify-product-reviews-badge" data-id="590739341354"></div>
