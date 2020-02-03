@@ -1,10 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org">
+  <head>
 <!--[if IE 9]> <html class="ie9 no-js" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <!-- Mirrored from fruit-demo.myshopify.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Feb 2020 16:46:44 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -731,7 +734,7 @@ for (var attr in meta) {
             <div class="product-slider line-white product-slider1">
               <div class="wrap-item" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1],[560,2],[768,3],[990,4]]">
                 
-<div class="item-product item-product1 text-center">
+<div  th:each="temp : ${user}" class="item-product item-product1 text-center">
   <div class="product-thumb">
     
     <a href="products/fresh-meal-kit-1.html" class="product-thumb-link rotate-thumb">
@@ -798,14 +801,7 @@ for (var attr in meta) {
     <a href="products/fresh-meal-kit-1.html" class="product-thumb-link rotate-thumb">
       <img src="../user/s/files/1/2644/1682/products/fruit_03_1ff0c82d-946b-41aa-a0ad-50083ef2607e_grande4c9e.jpg?v=1513649300" alt="Fresh Meal Kit" >
       
-      
-      
-      
-      
-      
-      
-      
-      <img src="../user/s/files/1/2644/1682/products/fruit_05_4474dc59-fc3b-47e7-a470-00eeed6ce665_grande4c9e.jpg?v=1513649300" alt="Fresh Meal Kit" >
+           <img src="../user/s/files/1/2644/1682/products/fruit_05_4474dc59-fc3b-47e7-a470-00eeed6ce665_grande4c9e.jpg?v=1513649300" alt="Fresh Meal Kit" >
       
       
     
