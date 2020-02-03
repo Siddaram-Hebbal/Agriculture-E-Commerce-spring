@@ -53,11 +53,11 @@ public class UserController {
 		
 		Admin p=this.lastseen();
 		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());        
-		List<Item> list=itemServiceImplementation.findAll();
-		model.addAttribute("user", list);
+	//	List<Item> list=itemServiceImplementation.findAll();
+	//	model.addAttribute("user", list);
 		
 		
-		return "user";
+		return "user/index";
 	}
 	
 	
