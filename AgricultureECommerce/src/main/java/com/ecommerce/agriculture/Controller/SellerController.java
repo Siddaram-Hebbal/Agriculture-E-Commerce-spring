@@ -60,7 +60,7 @@ public class SellerController {
 	public String index(Model model){
 
 		Admin p=this.lastseen();
-		model.addAttribute("name",p.getFirstName()+" "+p.getLastName());   
+		model.addAttribute("user",p.getFirstName()+" "+p.getLastName());   
 		Item item=new Item();
 		
 		model.addAttribute("item", item);
