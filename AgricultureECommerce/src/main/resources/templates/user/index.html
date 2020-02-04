@@ -1082,20 +1082,20 @@ for (var attr in meta) {
 						
                           
 
-<div class="item-product item-product1 text-center">
+<div class="item-product item-product1 text-center"  th:each="temp : ${user}" >
   <div class="product-thumb">
     
     <div class="deal-timer" data-date="02/02/2020"></div>
     
     <a href="products/dfsd.html" class="product-thumb-link rotate-thumb">
-      <img src="../user/s/files/1/2644/1682/products/fruit_31_grandee887.jpg?v=1515125720" alt="dfsd" >
+      <img  th:src="${temp.itemIMG}">
    
-      <img src="../user/s/files/1/2644/1682/products/fruit_31_grandee887.jpg?v=1515125720" alt="dfsd" >
+      <img  th:src="${temp.itemIMG}" >
        
     </a>
     </div>
   <div class="product-info">
-    <h3 class="product-title"><a href="products/dfsd.html">dfsd</a></h3>
+    <h3 class="product-title"><a href="products/dfsd.html">ONION</a></h3>
     <div class="product-price">
 
        
