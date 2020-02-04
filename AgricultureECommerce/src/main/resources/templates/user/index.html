@@ -1095,13 +1095,13 @@ for (var attr in meta) {
     </a>
     </div>
   <div class="product-info">
-    <h3 class="product-title"><a href="products/dfsd.html">ONION</a></h3>
+    <h3 class="product-title"><a href="products/dfsd.html"><span th:text="${temp.itemName}" ></span></a></h3>
     <div class="product-price">
 
        
       
       
-       <ins class="color"><span><span class="money">$5.99</span></span></ins>
+       <ins class="color"><span>₹<span class="money" th:text="${temp.itemPrice}"></span></span></ins>
   
       
      
@@ -1156,7 +1156,7 @@ for (var attr in meta) {
 
     <div class="latest-news">
 			<div class="container">
-				<h2 class="title30 font-bold title-box1 text-center">Lastest From Blog</h2>
+				<h2 class="title30 font-bold title-box1 text-center">Latest From Blog</h2>
 				<div class="row">
                   
                   
